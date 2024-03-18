@@ -18,10 +18,10 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <ConnectButton />
 
-        <h1 className={styles.title}>
+        <h3 className={styles.description}>
           Welcome to <a href="">RainbowKit</a> + <a href="">wagmi</a> +{' '}
           <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </h3>
 
         <p className={styles.description}>
           Get started by editing{' '}
