@@ -22,15 +22,6 @@ const client = new QueryClient();
 
 // Update custom theme specifically for the ConnectButton
 const customTheme = midnightTheme({
-  colors: {
-    accentColor: '#F28F6B', // This is your primary accent color
-    accentColorForeground: 'white', // Ensures text on the button is legible
-    connectButtonBackground: '#F28F6B', // Sets the background of the connect button
-    connectButtonBackgroundHover: '#F2836B', // Slightly different shade for hover effect
-    connectButtonText: 'white', // Text color for the connect button
-    // Adjust other colors as necessary
-  },
-  // Further customization options can be added here
 });
 
 function MyApp({ Component, pageProps }: AppProps) {

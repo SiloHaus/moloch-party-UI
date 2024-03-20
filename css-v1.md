@@ -17,21 +17,10 @@
 }
 
 .cardTitle {
-  display: flex;
-  text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
   color: #F2F2F2; /* Light gray for titles, ensuring readability */
-  font-weight: 200;
-  justify-content: center; /* Center items */
-  margin: 0 0 0.25rem 0; /* Reduced bottom margin */
-}
-
-.cardSubtitle { /* New class for the subtitle */
-  font-size: 1rem;
-  color: #F2F2F2; /* Light gray for content, ensuring readability */
-  font-weight: 100;
-  text-align: center;
-  margin: 0 0 0.5rem 0; /* Adjust as needed */
+  font-weight: 400;
 }
 
 .cardContent {
@@ -47,15 +36,14 @@
 }
 
 .menu {
-  width: 30%; /* Left third of the screen */
+  width: 20%; /* Left third of the screen */
   display: flex;
   flex-direction: column;
   gap: 10px; /* Adjust the space between cards */
 }
 
 .mainContent {
-  width: 1024px; /* Hero Image Size */
-  height: 567px; /* Hero Image Size */
+  width: 80%; /* Right two-thirds of the screen */
   background-color: #1a1a1d; /* Background color */
   padding: 20px; /* Spacing around content */
   border: 1px solid #557c9e; /* Muted blue border, same as .card */
@@ -71,9 +59,11 @@
   justify-content: right; /* Center items horizontally */
   align-items: right; /* Center items vertically */
   margin-bottom: 10px; /* Space between this bar and the content below it */
-  /*border: 1px solid #557c9e; /* Muted blue border, same as .card */
+  border: 1px solid #557c9e; /* Muted blue border, same as .card */
   border-radius: 0 0 16px; /* Elegant curves */
+  margin-top: 10px;
   color: #DAA520; /* A nice gold color */
+  padding: 1px 10px; /* Adds 1px space on the top and bottom, 10px on the left and right */
 }
 
 .footer {
@@ -93,15 +83,15 @@
   text-decoration: underline; /* Adds underline on hover */
 }
 
-/* This ensures that the icons container does not disrupt layout */
-.socialIcons {
-  display: inline-block;
+/* Assuming you're using FontAwesome icons, adjust the color and spacing */
+.socialIcons a {
+  color: #DAA520; /* Gold color for the icons */
+  margin: 0 10px; /* Adjust spacing between icons as needed */
 }
 
-.socialIcons svg {
-  width: 25px;
-  height: 25px;
-  fill: #DAA520; /* Gold color for the icons */
+/* This ensures that the icons container does not disrupt layout */
+.socialIcons {
+  display: flex; /* Aligns icons in a row */
 }
 
 .h4 {
