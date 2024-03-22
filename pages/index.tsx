@@ -8,6 +8,7 @@ const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
   const [raisedAmount, setRaisedAmount] = useState(420.69); // Placeholder value
   const [goalAmount, setGoalAmount] = useState(1000); // Placeholder goal
+  const [memberNumber, setMemberNumber] = useState(69); // Placeholder value
 
   // Calculate the percentage of the goal met for the funding meter
   const fundingPercentage = Math.min((raisedAmount / goalAmount) * 100, 100);
@@ -41,9 +42,10 @@ const Home: NextPage = () => {
                   <div className={styles.goalAmount}>pledged of Ξ{goalAmount} Goal.</div>
                 </div>
 
-                <button className={styles.card}>
-                  <span className={styles.h4}>mintComm()</span>
-                </button>
+                <div className={styles.memberCard}>
+                  <div className={styles.memberNumber}>{memberNumber}</div>
+                  <div className={styles.members}>members</div>
+                </div>
 
                 <button className={styles.card}>
                   <span className={styles.h4}>marketplace()</span>

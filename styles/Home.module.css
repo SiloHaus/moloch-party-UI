@@ -69,10 +69,39 @@
 }
 
 .goalAmount {
-  font-size: 1rem; /* Larger font size for emphasis */
+  font-size: 0.9rem; /* Larger font size for emphasis */
   color: #F2F2F2; /* A gold color to draw attention */
   text-align: left; /* Center it within its container */
+  margin-top: 5px; /* Space it a bit from the element above it */
+  margin-bottom: 5px; /* And a bit from the element below */
+  margin-left: 10px;
+}
+
+.memberCard {
+  background-color: #262626; /* Matching the body's background */
+  border-radius: 0 0 20px; /* Elegant curves */
+  margin: 0.02rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Include color in transition */
+  width: 400px;
+  height: 100px;
+  color: #F2F2F2; /* Set default text color to light gray */
+}
+
+.memberNumber {
+  font-size: 1.5rem; /* Larger font size for emphasis */
+  color: #3D9DF2; 
+  font-weight: bold; /* Make it bold to stand out */
+  text-align: left; /* Center it within its container */
   margin-top: 10px; /* Space it a bit from the element above it */
+  margin-bottom: 5px; /* And a bit from the element below */
+  margin-left: 10px;
+}
+
+.members {
+  font-size: 0.9rem; /* Larger font size for emphasis */
+  color: #F2F2F2; /* A gold color to draw attention */
+  text-align: left; /* Center it within its container */
+  margin-top: 5px; /* Space it a bit from the element above it */
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
