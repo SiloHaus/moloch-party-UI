@@ -5,7 +5,12 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
-  // Removed unused state hooks and related functions
+  // Example static state - replace these with real data from your smart contracts later
+  const [raisedAmount, setRaisedAmount] = useState(420.69); // Placeholder value
+  const [goalAmount, setGoalAmount] = useState(1000); // Placeholder goal
+
+  // Calculate the percentage of the goal met for the funding meter
+  const fundingPercentage = Math.min((raisedAmount / goalAmount) * 100, 100);
 
   return (
     <div className={styles.container}>
@@ -28,9 +33,13 @@ const Home: NextPage = () => {
 
             <div className={styles.contentArea}>
               <div className={styles.menu}>
-                <button className={styles.card}>
-                  <span className={styles.h4}>mint()</span>
-                </button>
+                <div className={styles.fundingCard}>
+                  <div className={styles.fundingMeterContainer}>
+                    <div className={styles.fundingMeter} style={{ width: `${fundingPercentage}%` }}></div>
+                  </div>
+                  <div className={styles.amountRaised}>Ξ {raisedAmount}</div>
+                  <div className={styles.goalAmount}>pledged of Ξ{goalAmount} Goal.</div>
+                </div>
 
                 <button className={styles.card}>
                   <span className={styles.h4}>mintComm()</span>
@@ -45,7 +54,9 @@ const Home: NextPage = () => {
                 </button>
               </div>
               <div className={styles.mainContent}>
-                <p> Hero Image. </p>
+                  <iframe className={styles.videoIframe}
+                    src="https://www.youtube.com/embed/jysypCeADJI">
+                  </iframe>
               </div>
             </div>
           </main>

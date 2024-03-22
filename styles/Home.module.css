@@ -23,42 +23,58 @@
   border: 1px solid #557c9e; /* Muted blue for the border */
   border-radius: 0 0 20px; /* Elegant curves */
   margin: 0.02rem;
-  padding: 0.2rem;
   transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Include color in transition */
   width: 400px;
   height: 100px;
   color: #F2F2F2; /* Set default text color to light gray */
 }
 
-.card:hover {
-  border-color: #3D9DF2; /* Bright neon blue for the border */
-  transform: translateY(-5px); /* Slight elevation effect */
-  color: #3D9DF2; /* Change text color on hover to bright neon blue */
+.fundingCard {
+  background-color: #262626; /* Matching the body's background */
+  border-radius: 0 0 20px; /* Elegant curves */
+  margin: 0.02rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Include color in transition */
+  width: 400px;
+  height: 100px;
+  color: #F2F2F2; /* Set default text color to light gray */
 }
 
-.cardTitle {
-  display: flex;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #F2F2F2; /* Light gray for titles, ensuring readability */
-  font-weight: 200;
-  justify-content: center; /* Center items */
-  margin: 0 0 0.25rem 0; /* Reduced bottom margin */
+.fundingMeterContainer {
+  width: 100%; /* Full width to represent the total goal */
+  border: 1px solid #3D9DF2; /* Border around the entire funding meter */
+  border-radius: 1px; /* Rounded corners for the container */
+  background-color: #1a1a1d; /* Background color for the unfilled part */
+  height: 7px; /* Height of the container */
+  position: relative; /* Establishes a positioning context for .fundingMeter */
 }
 
-.cardSubtitle {
-  font-size: 1rem;
-  color: #F2F2F2; /* Light gray for content, ensuring readability */
-  font-weight: 100;
-  text-align: center;
-  margin: 1rem 0 0.5rem 0; /* Increased top margin */
+.fundingMeter {
+  background-color: #3D9DF2; /* Bright blue color for successful progress indication */
+  height: 5px; /* Height of the filled part */
+  border-radius: 1px; /* Rounded corners for a polished look */
+  position: absolute; /* Positioned absolutely within .fundingMeterContainer */
+  top: 1px; /* Align top with container's border */
+  left: 1px; /* Align left with container's border */
+  transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
 }
 
+.amountRaised {
+  font-size: 1.5rem; /* Larger font size for emphasis */
+  color: #3D9DF2; 
+  font-weight: bold; /* Make it bold to stand out */
+  text-align: left; /* Center it within its container */
+  margin-top: 10px; /* Space it a bit from the element above it */
+  margin-bottom: 5px; /* And a bit from the element below */
+  margin-left: 10px;
+}
 
-.cardContent {
-  font-size: 1rem;
-  color: #F2F2F2; /* Light gray for content, ensuring readability */
-  font-weight: 100;
+.goalAmount {
+  font-size: 1rem; /* Larger font size for emphasis */
+  color: #F2F2F2; /* A gold color to draw attention */
+  text-align: left; /* Center it within its container */
+  margin-top: 10px; /* Space it a bit from the element above it */
+  margin-bottom: 5px; /* And a bit from the element below */
+  margin-left: 10px;
 }
 
 .contentArea {
@@ -78,16 +94,20 @@
 }
 
 .mainContent {
-  width: 1024px; /* Hero Image Size */
-  min-width: 1024px;
-  height: 567px; /* Hero Image Size */
+  width: 1280px; /* Hero Image Size */
+  min-width: 1280px;
+  height: 720px; /* Hero Image Size */
   background-color: #1a1a1d; /* Background color */
-  padding: 10px; /* Spacing around content */
-  border: 1px solid #557c9e; /* Muted blue border, same as .card */
   border-radius: 0 0 16px; /* Elegant curves */
   order: 1; /* Switch sides */
   margin-left: 10px; /* Adjust as needed to reduce space */
   margin-right: 20px; /* Increase or decrease as per requirement */
+}
+
+.videoIframe {
+  width: 100%; /* Make the video iframe take up 100% of its parent's width */
+  height: 100%; /* Make the video iframe take up 100% of its parent's height */
+  border: none; /* Remove border */
 }
 
 .footer {
@@ -116,13 +136,4 @@
   width: 25px;
   height: 25px;
   fill: #DAA520; /* Gold color for the icons */
-}
-
-.h4 {
-  font-size: 0.8rem; /* Slightly smaller for subtlety */
-  color: #F2F2F2; /* Set default text color to light gray */
-  margin: 0.5rem 0.25rem 0.25rem; /* Adjusted spacing */
-  line-height: 1.4; /* Optimal line height for readability */
-  letter-spacing: 0.12em; /* Slight letter spacing for elegance */
-  transform: translateY(-5px); /* Slight elevation effect */
 }
