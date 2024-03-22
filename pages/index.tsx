@@ -3,12 +3,15 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import Image from 'next/image';
+/*import { Link, Element } from '@react-scroll/modules/components';*/
 
 const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
   const [raisedAmount, setRaisedAmount] = useState(420.69); // Placeholder value
   const [goalAmount, setGoalAmount] = useState(1000); // Placeholder goal
   const [memberNumber, setMemberNumber] = useState(69); // Placeholder value
+  const [daysLeft, setDaysLeft] = useState(5); // Placeholder value
 
   // Calculate the percentage of the goal met for the funding meter
   const fundingPercentage = Math.min((raisedAmount / goalAmount) * 100, 100);
@@ -25,55 +28,97 @@ const Home: NextPage = () => {
         <div className={styles.centeredContent}>
 
           <main className={styles.main}>
-            <ConnectButton />
             
-            <div className="card">
-              <h3 className="cardTitle">ALCHEMISTRESSES:</h3>
-              <p className="cardSubtitle">A Moloch LP Cooperative focused on alAsset Liquidity.</p>
-            </div>
-
-            <div className={styles.contentArea}>
-              <div className={styles.menu}>
-                <div className={styles.fundingCard}>
-                  <div className={styles.fundingMeterContainer}>
-                    <div className={styles.fundingMeter} style={{ width: `${fundingPercentage}%` }}></div>
-                  </div>
-                  <div className={styles.amountRaised}>Ξ {raisedAmount}</div>
-                  <div className={styles.goalAmount}>pledged of Ξ{goalAmount} Goal.</div>
-                </div>
-
-                <div className={styles.memberCard}>
-                  <div className={styles.memberNumber}>{memberNumber}</div>
-                  <div className={styles.members}>members</div>
-                </div>
-
-                <button className={styles.card}>
-                  <span className={styles.h4}>marketplace()</span>
-                </button>
-
-                <button className={styles.card}>
-                  <span className={styles.h4}>withdraw()</span>
-                </button>
+            <div className={styles.mainWrapper}>
+              
+              <div className={styles.topBar}>
+                <div className={styles.connectButton}><ConnectButton /></div>
               </div>
-              <div className={styles.mainContent}>
-                  <iframe className={styles.videoIframe}
-                    src="https://www.youtube.com/embed/jysypCeADJI">
-                  </iframe>
+
+              <div className={styles.Title}>
+                <div className={styles.cardSubtitle}>ALCHEMISTRESSES: An LP Cooperative for the Alchemix Community on Optimism.</div>
+              </div>
+
+              <div className={styles.contentArea}>
+                <div className={styles.menu}>
+                  <div className={styles.fundingCard}>
+                    <div className={styles.fundingMeterContainer}>
+                      <div className={styles.fundingMeter} style={{ width: `${fundingPercentage}%` }}></div>
+                    </div>
+                    <div className={styles.amountRaised}>Ξ {raisedAmount}</div>
+                    <div className={styles.goalAmount}>pledged of Ξ{goalAmount} Goal</div>
+                  </div>
+
+                  <div className={styles.memberCard}>
+                    <div className={styles.memberNumber}>{memberNumber}</div>
+                    <div className={styles.members}>members</div>
+                  </div>
+
+                  <div className={styles.daysCard}>
+                    <div className={styles.daysLeft}>{daysLeft}</div>
+                    <div className={styles.daysToGo}>days to go</div>
+                  </div>
+
+                  <div className={styles.backingCard}>
+                    /tap_to_join_moloch_party
+                  </div>
+                </div>
+                <div className={styles.mainContent}>
+                    <iframe className={styles.videoIframe}
+                      src="https://www.youtube.com/embed/jysypCeADJI">
+                    </iframe>
+                </div>
               </div>
             </div>
           </main>
         </div>
       </div>
-      <footer className={styles.footer}>
-        <span>Made with ❤️ by your frens at 🌈</span>
-        <div className={styles.socialIcons}>
-          <a href="https://twitter.com/rootdraws" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
-            </svg>
-          </a>
+      
+      <div className={styles.banner}>
+        <div className={styles.bannerItem}>
+          <div className={styles.bannerIcon}></div> {/* Placeholder for icon */}
+          Join the Alchemix Community to build DAO-Owned Liquidity.
         </div>
-      </footer>
+        <div className={styles.bannerItem}>
+          <div className={styles.bannerIcon}></div> {/* Placeholder for icon */}
+          Make Proposals to grow the Treasury. 
+        </div>
+        <div className={styles.bannerItem}>
+          <div className={styles.bannerIcon}></div> {/* Placeholder for icon */}
+          Each Mistress holds Equity and Governance Rights to a Community-Owned Treasury.
+        </div>
+      </div>
+      
+      <div className={styles.subBanner}>
+        <p>Campaign Offerings:</p>
+      </div>
+
+  
+<div className={styles.parentContainer}>
+  {/* Left Rewards Container.*/}
+  <div className={styles.tierContainerLeft}>
+    <div className={styles.tierContainer}>
+      <div className={styles.tierI}>
+        <Image src="/42.png" alt="Alchemistress OG" width={900} height={300} />
+      </div>
+      <div className={styles.tierII}>Card 2</div>
+      <div className={styles.tierIII}>Card 3</div>
+    </div>
+  </div>
+
+  <div className={styles.tierContainerRight}>
+    {/* Right Rewards Container.*/}
+    <div className={styles.tierRightI}>
+      <div className={styles.tierRightButton}>/tap_to_mint()</div>
+    </div>
+    <div className={styles.tierRightII}>
+      <div className={styles.tierRightButton}>/tap_to_mintComm()</div>
+    </div>
+    <div className={styles.tierRightIII}>
+      <div className={styles.tierRightButton}>/tap_to_mint()</div>
+    </div>
+  </div>
+</div>
     </div>
   );
 };

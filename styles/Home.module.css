@@ -8,25 +8,40 @@
   margin: 0 auto; /* Helps in centering the wrapper if needed */
 }
 
+.topBar {
+  display: flex;
+  width: 100%;
+  background-color: #262626; /* Background color, adjust as needed */
+}
+
+.connectButton {
+  align-content: left;
+  color: #F2F2F2; /* Text color, adjust as needed */
+}
+
 /* Centered content area, you can use this for your main content */
 .centeredContent {
   max-width: 1200px; /* Max width for your content */
   width: 100%; /* Makes it responsive */
-  margin: 20px; /* Spacing around the content */
+  /*margin: 20px; /* Spacing around the content */
   display: flex;
   flex-direction: column;
   align-items: center; /* Center items horizontally */
 }
 
-.card {
-  background-color: #262626; /* Matching the body's background */
-  border: 1px solid #557c9e; /* Muted blue for the border */
-  border-radius: 0 0 20px; /* Elegant curves */
-  margin: 0.02rem;
-  transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Include color in transition */
-  width: 400px;
-  height: 100px;
-  color: #F2F2F2; /* Set default text color to light gray */
+.Title {
+  display: flex;
+  flex-direction: column; /* Stack the title and subtitle vertically */
+  align-items: center; /* Center-align the text */
+  margin-bottom: 20px; /* Adds some space below the title section */
+}
+
+.cardSubtitle {
+  font-size: 1.1rem; /* Larger font size for emphasis */
+  color: #F2F2F2; /* Keeps the color consistent with the title */
+  text-align: center; /* Ensures subtitle is center-aligned */
+  margin-top: 5px; /* Space it a bit from the element above it */
+  margin-bottom: 5px; /* And a bit from the element below */
 }
 
 .fundingCard {
@@ -46,6 +61,11 @@
   background-color: #1a1a1d; /* Background color for the unfilled part */
   height: 7px; /* Height of the container */
   position: relative; /* Establishes a positioning context for .fundingMeter */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+}
+
+.fundingMeterContainer:hover {
+  box-shadow: 0 0 8px #3D9DF2; /* Glowing effect on hover */
 }
 
 .fundingMeter {
@@ -89,7 +109,7 @@
 
 .memberNumber {
   font-size: 1.5rem; /* Larger font size for emphasis */
-  color: #3D9DF2; 
+  color: #F2F2F2; 
   font-weight: bold; /* Make it bold to stand out */
   text-align: left; /* Center it within its container */
   margin-top: 10px; /* Space it a bit from the element above it */
@@ -104,6 +124,51 @@
   margin-top: 5px; /* Space it a bit from the element above it */
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
+}
+
+.daysCard {
+  background-color: #262626; /* Matching the body's background */
+  border-radius: 0 0 20px; /* Elegant curves */
+  margin: 0.02rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Include color in transition */
+  width: 400px;
+  height: 100px;
+  color: #F2F2F2; /* Set default text color to light gray */
+}
+
+.daysLeft {
+  font-size: 1.5rem; /* Larger font size for emphasis */
+  color: #F2F2F2; 
+  font-weight: bold; /* Make it bold to stand out */
+  text-align: left; /* Center it within its container */
+  margin-top: 10px; /* Space it a bit from the element above it */
+  margin-bottom: 5px; /* And a bit from the element below */
+  margin-left: 10px;
+}
+
+.daysToGo {
+  font-size: 0.9rem; /* Larger font size for emphasis */
+  color: #F2F2F2; /* A gold color to draw attention */
+  text-align: left; /* Center it within its container */
+  margin-top: 5px; /* Space it a bit from the element above it */
+  margin-bottom: 5px; /* And a bit from the element below */
+  margin-left: 10px;
+}
+
+.backingCard {
+background-color: #262626; /* Matching the body's background */
+  border: 1px solid #F2F2F2; /* Muted blue for the border */
+  margin: 0.02rem;
+  transition: border-color 0.3s ease, transform 0.3s ease; /* Include color in transition */
+  width: 400px;
+  height: 50px;
+  color: #F2F2F2; /* Set default text color to light gray */
+  padding: 9px;
+}
+
+.backingCard:hover {
+  border-color: #3D9DF2; /* Bright electric blue for the border */
+  transform: translateY(-5px); /* Slight lift effect */
 }
 
 .contentArea {
@@ -123,14 +188,14 @@
 }
 
 .mainContent {
-  width: 1280px; /* Hero Image Size */
-  min-width: 1280px;
-  height: 720px; /* Hero Image Size */
+  width: 1024px; /* Hero Image Size */
+  min-width: 1024px;
+  height: 576px; /* Hero Image Size */
   background-color: #1a1a1d; /* Background color */
-  border-radius: 0 0 16px; /* Elegant curves */
   order: 1; /* Switch sides */
   margin-left: 10px; /* Adjust as needed to reduce space */
   margin-right: 20px; /* Increase or decrease as per requirement */
+  border: 1px solid #557c9e; /* Muted blue for the border */
 }
 
 .videoIframe {
@@ -139,21 +204,148 @@
   border: none; /* Remove border */
 }
 
-.footer {
+.banner {
   display: flex;
-  justify-content: space-between; /* Ensures content is aligned to both ends */
-  align-items: center; /* Centers items vertically */
-  padding: 10px 20px; /* Reduced top/bottom padding, kept left/right */
-  color: #DAA520; /* Sets the gold color for text */
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  border: 1px solid #3D9DF2; /* Electric blue border */
+  padding: 0 30px; /* Healthy margins on either end */
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #262626; /* Assuming a dark theme; adjust as needed */
 }
 
-.footer a {
-  color: inherit; /* Inherits the gold color from the footer */
-  text-decoration: none; /* Removes the underline from links */
+.bannerItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  gap: 20px; /* Space between icon and message */
 }
 
-.footer a:hover {
-  text-decoration: underline; /* Adds underline on hover */
+.bannerIcon {
+  width: 120px; /* Example size, adjust as needed */
+  height: 80px; /* Example size, adjust as needed */
+  background-color: #3D9DF2; /* Placeholder for the icon, replace with actual image */
+}
+
+.subBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid #3D9DF2; /* Electric blue border */
+  padding: 0 30px; /* Healthy margins on either end */
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #262626; /* Assuming a dark theme; adjust as needed */
+}
+
+.parentContainer {
+  display: flex;
+  justify-content: space-between; /* Aligns children (left and right containers) on opposite ends */
+  height: 100vh; /* Full viewport height */
+}
+
+.tierContainerLeft {
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  align-items: center; /* Center the cards horizontally within the container */
+  gap: 20px; /* Space between cards */
+}
+
+.tierContainerRight {
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  align-items: center; /* Center the cards horizontally within the container */
+}
+
+.tierI {
+  width: 902px; /* Width of each card */
+  height: 302px; /* Height of each card */
+  border: 1px solid #3D9DF2; /* Electric blue border */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  box-sizing: border-box; /* Includes border in the width and height calculations */
+}
+
+.tierRightI {
+  display: flex;
+  flex-direction: column; /* Keep this to stack children vertically */
+  justify-content: flex-start; /* This aligns children to the top */
+  align-items: right; /* This places  the children horizontally */
+  width: 902px; /* Width of each card */
+  height: 302px; /* Height of each card */
+  box-sizing: border-box; /* Includes border in the width and height calculations */
+}
+
+.tierII {
+  width: 902px; /* Width of each card */
+  height: 302px; /* Height of each card */
+  border: 1px solid #3D9DF2; /* Electric blue border */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  box-sizing: border-box; /* Includes border in the width and height calculations */
+  margin-top: 20px;
+}
+
+.tierRightII {
+  display: flex;
+  flex-direction: column; /* Keep this to stack children vertically */
+  justify-content: flex-start; /* This aligns children to the top */
+  align-items: right; /* This places  the children horizontally */
+  width: 902px; /* Width of each card */
+  height: 302px; /* Height of each card */
+  box-sizing: border-box; /* Includes border in the width and height calculations */
+  margin-top: 20px;
+}
+
+.tierIII {
+  width: 902px; /* Width of each card */
+  height: 302px; /* Height of each card */
+  border: 1px solid #3D9DF2; /* Electric blue border */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  box-sizing: border-box; /* Includes border in the width and height calculations */
+  margin-top: 20px;
+}
+
+.tierRightIII {
+  display: flex;
+  flex-direction: column; /* Keep this to stack children vertically */
+  justify-content: flex-start; /* This aligns children to the top */
+  align-items: right; /* This places  the children horizontally */
+  width: 902px; /* Width of each card */
+  height: 302px; /* Height of each card */
+  box-sizing: border-box; /* Includes border in the width and height calculations */
+  margin-top: 20px;
+}
+
+.tierRightInfo {
+
+}
+
+.tierRightButton {
+  background-color: #262626; /* Matching the body's background */
+  border: 1px solid #F2F2F2; /* Muted blue for the border */
+  transition: border-color 0.3s ease, transform 0.3s ease; /* Include color in transition */
+  width: 400px;
+  height: 50px;
+  color: #F2F2F2; /* Set default text color to light gray */
+  padding: 9px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.tierRightButton:hover {
+  border-color: #3D9DF2; /* Bright electric blue for the border */
+  transform: translateY(-5px); /* Slight lift effect */
 }
 
 /* This ensures that the icons container does not disrupt layout */
@@ -164,5 +356,5 @@
 .socialIcons svg {
   width: 25px;
   height: 25px;
-  fill: #DAA520; /* Gold color for the icons */
+  fill: #557c9e; /* Gold color for the icons */
 }
