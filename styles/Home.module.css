@@ -1,3 +1,23 @@
+/* Main wrapper style */
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  /*height: 100vh; /* Full height of the viewport */
+  margin: 0 auto; /* Helps in centering the wrapper if needed */
+}
+
+/* Centered content area, you can use this for your main content */
+.centeredContent {
+  max-width: 1200px; /* Max width for your content */
+  width: 100%; /* Makes it responsive */
+  margin: 20px; /* Spacing around the content */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
 .card {
   background-color: #262626; /* Matching the body's background */
   border: 1px solid #557c9e; /* Muted blue for the border */
@@ -5,8 +25,8 @@
   margin: 0.02rem;
   padding: 0.2rem;
   transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Include color in transition */
-  display: flex;
-  flex-direction: column;
+  width: 400px;
+  height: 100px;
   color: #F2F2F2; /* Set default text color to light gray */
 }
 
@@ -26,13 +46,14 @@
   margin: 0 0 0.25rem 0; /* Reduced bottom margin */
 }
 
-.cardSubtitle { /* New class for the subtitle */
+.cardSubtitle {
   font-size: 1rem;
   color: #F2F2F2; /* Light gray for content, ensuring readability */
   font-weight: 100;
   text-align: center;
-  margin: 0 0 0.5rem 0; /* Adjust as needed */
+  margin: 1rem 0 0.5rem 0; /* Increased top margin */
 }
+
 
 .cardContent {
   font-size: 1rem;
@@ -43,44 +64,37 @@
 .contentArea {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  /* Add some space around the items if needed */
 }
 
 .menu {
-  width: 30%; /* Left third of the screen */
+  width: 500px;
   display: flex;
   flex-direction: column;
   gap: 10px; /* Adjust the space between cards */
+  order: 2; /* Switch sides */
+  margin-right: 10px; /* Reduce space on the right */
 }
 
 .mainContent {
   width: 1024px; /* Hero Image Size */
+  min-width: 1024px;
   height: 567px; /* Hero Image Size */
   background-color: #1a1a1d; /* Background color */
-  padding: 20px; /* Spacing around content */
+  padding: 10px; /* Spacing around content */
   border: 1px solid #557c9e; /* Muted blue border, same as .card */
-  margin-left: 10px;
   border-radius: 0 0 16px; /* Elegant curves */
-}
-
-.topBar {
-  display: flex;
-  width: 100%; /* Spans the full width */
-  height: 100%; /* Spans the full height */
-  background-color: #262626; /* Background color */
-  justify-content: right; /* Center items horizontally */
-  align-items: right; /* Center items vertically */
-  margin-bottom: 10px; /* Space between this bar and the content below it */
-  /*border: 1px solid #557c9e; /* Muted blue border, same as .card */
-  border-radius: 0 0 16px; /* Elegant curves */
-  color: #DAA520; /* A nice gold color */
+  order: 1; /* Switch sides */
+  margin-left: 10px; /* Adjust as needed to reduce space */
+  margin-right: 20px; /* Increase or decrease as per requirement */
 }
 
 .footer {
   display: flex;
   justify-content: space-between; /* Ensures content is aligned to both ends */
   align-items: center; /* Centers items vertically */
-  padding: 20px; /* Adds padding around the footer for spacing */
+  padding: 10px 20px; /* Reduced top/bottom padding, kept left/right */
   color: #DAA520; /* Sets the gold color for text */
 }
 
