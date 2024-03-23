@@ -1,21 +1,24 @@
 import { useState } from 'react';
+import React, { useRef } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
+import FundingGoal from '../components/fundingGoal';
+import MemberCount from '../components/memberCount';
+import DaysLeft from '../components/daysLeft';
+import TapToJoin from '../components/tapToJoin';
 /*import { Link, Element } from '@react-scroll/modules/components';*/
 
 const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
-  const [raisedAmount, setRaisedAmount] = useState(420.69); // Placeholder value
-  const [goalAmount, setGoalAmount] = useState(1000); // Placeholder goal
+  const [raisedAmount, setRaisedAmount] = useState(420.69);
+  const [goalAmount, setGoalAmount] = useState(1000);
   const [memberNumber, setMemberNumber] = useState(69); // Placeholder value
   const [daysLeft, setDaysLeft] = useState(5); // Placeholder value
-
-  // Calculate the percentage of the goal met for the funding meter
-  const fundingPercentage = Math.min((raisedAmount / goalAmount) * 100, 100);
-
+  const anchorRef = useRef(null);
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -41,27 +44,10 @@ const Home: NextPage = () => {
 
               <div className={styles.contentArea}>
                 <div className={styles.menu}>
-                  <div className={styles.fundingCard}>
-                    <div className={styles.fundingMeterContainer}>
-                      <div className={styles.fundingMeter} style={{ width: `${fundingPercentage}%` }}></div>
-                    </div>
-                    <div className={styles.amountRaised}>Ξ {raisedAmount}</div>
-                    <div className={styles.goalAmount}>pledged of Ξ{goalAmount} Goal</div>
-                  </div>
-
-                  <div className={styles.memberCard}>
-                    <div className={styles.memberNumber}>{memberNumber}</div>
-                    <div className={styles.members}>members</div>
-                  </div>
-
-                  <div className={styles.daysCard}>
-                    <div className={styles.daysLeft}>{daysLeft}</div>
-                    <div className={styles.daysToGo}>days to go</div>
-                  </div>
-
-                  <div className={styles.backingCard}>
-                    /tap_to_join_moloch_party
-                  </div>
+                      <FundingGoal raisedAmount={raisedAmount} goalAmount={goalAmount} />
+                      <MemberCount memberNumber={memberNumber} />
+                      <DaysLeft daysLeft={daysLeft} />
+                      <TapToJoin />
                 </div>
                 <div className={styles.mainContent}>
                     <iframe className={styles.videoIframe}
@@ -90,7 +76,7 @@ const Home: NextPage = () => {
       </div>
       
       <div className={styles.subBanner}>
-        <p>Campaign Offerings:</p>
+        <div id="targetAnchor">Campaign Offerings:</div>
       </div>
 
   

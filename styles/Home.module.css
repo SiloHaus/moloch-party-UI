@@ -99,7 +99,6 @@
 
 .memberCard {
   background-color: #262626; /* Matching the body's background */
-  border-radius: 0 0 20px; /* Elegant curves */
   margin: 0.02rem;
   transition: border-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Include color in transition */
   width: 400px;
@@ -112,7 +111,7 @@
   color: #F2F2F2; 
   font-weight: bold; /* Make it bold to stand out */
   text-align: left; /* Center it within its container */
-  margin-top: 10px; /* Space it a bit from the element above it */
+  margin-top: 5px; /* Space it a bit from the element above it */
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
@@ -141,7 +140,7 @@
   color: #F2F2F2; 
   font-weight: bold; /* Make it bold to stand out */
   text-align: left; /* Center it within its container */
-  margin-top: 10px; /* Space it a bit from the element above it */
+  margin-top: 5px; /* Space it a bit from the element above it */
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
@@ -156,14 +155,39 @@
 }
 
 .backingCard {
-background-color: #262626; /* Matching the body's background */
-  border: 1px solid #F2F2F2; /* Muted blue for the border */
+  background-color: #262626;
+  border: 1px solid #F2F2F2;
   margin: 0.02rem;
-  transition: border-color 0.3s ease, transform 0.3s ease; /* Include color in transition */
+  transition: border-color 0.3s ease, transform 0.3s ease;
   width: 400px;
   height: 50px;
-  color: #F2F2F2; /* Set default text color to light gray */
+  color: #F2F2F2;
   padding: 9px;
+  cursor: pointer;
+  position: relative; /* Needed for absolute positioning of the child element */
+}
+
+.hoverText {
+  color: #fff;
+  bottom: -30px; /* Adjusted to move the text lower */
+  left: 0;
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.hoverText ul {
+  list-style-type: circle; /* Changes the bullet style */
+  padding-left: 20px; /* Adjusts spacing to the left of the bullets */
+}
+
+.hoverText a {
+ color: #fff;
+ text-decoration: underline;
+}
+
+.hoverText li {
+  margin-bottom: 10px; /* Adds space between list items */
 }
 
 .backingCard:hover {
@@ -182,7 +206,7 @@ background-color: #262626; /* Matching the body's background */
   width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adjust the space between cards */
+  gap: 5px; /* Adjust the space between cards */
   order: 2; /* Switch sides */
   margin-right: 10px; /* Reduce space on the right */
 }
