@@ -9,15 +9,15 @@ import FundingGoal from '../components/fundingGoal';
 import MemberCount from '../components/memberCount';
 import DaysLeft from '../components/daysLeft';
 import TapToJoin from '../components/tapToJoin';
-/*import { Link, Element } from '@react-scroll/modules/components';*/
+import HomeBanner from '../components/homeBanner';
+import RewardTiers from '../components/rewardTiers';
 
 const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
   const [raisedAmount, setRaisedAmount] = useState(420.69);
   const [goalAmount, setGoalAmount] = useState(1000);
-  const [memberNumber, setMemberNumber] = useState(69); // Placeholder value
-  const [daysLeft, setDaysLeft] = useState(5); // Placeholder value
-  const anchorRef = useRef(null);
+  const [memberNumber, setMemberNumber] = useState(69);
+  const [daysLeft, setDaysLeft] = useState(5);
   
   return (
     <div className={styles.container}>
@@ -60,51 +60,16 @@ const Home: NextPage = () => {
         </div>
       </div>
       
-      <div className={styles.banner}>
-        <div className={styles.bannerItem}>
-          <div className={styles.bannerIcon}></div> {/* Placeholder for icon */}
-          Join the Alchemix Community to build DAO-Owned Liquidity.
-        </div>
-        <div className={styles.bannerItem}>
-          <div className={styles.bannerIcon}></div> {/* Placeholder for icon */}
-          Make Proposals to grow the Treasury. 
-        </div>
-        <div className={styles.bannerItem}>
-          <div className={styles.bannerIcon}></div> {/* Placeholder for icon */}
-          Each Mistress holds Equity and Governance Rights to a Community-Owned Treasury.
-        </div>
-      </div>
+    <HomeBanner />
       
-      <div className={styles.subBanner}>
-        <div id="targetAnchor">Campaign Offerings:</div>
+      <div className={styles.newPageA}>
+        <div id="targetAnchor"></div>
       </div>
 
-  
-<div className={styles.parentContainer}>
-  {/* Left Rewards Container.*/}
-  <div className={styles.tierContainerLeft}>
-    <div className={styles.tierContainer}>
-      <div className={styles.tierI}>
-        <Image src="/42.png" alt="Alchemistress OG" width={900} height={300} />
+      <div className={styles.newPageB}>
+          Funding Goals:
       </div>
-      <div className={styles.tierII}>Card 2</div>
-      <div className={styles.tierIII}>Card 3</div>
-    </div>
-  </div>
-
-  <div className={styles.tierContainerRight}>
-    {/* Right Rewards Container.*/}
-    <div className={styles.tierRightI}>
-      <div className={styles.tierRightButton}>/tap_to_mint()</div>
-    </div>
-    <div className={styles.tierRightII}>
-      <div className={styles.tierRightButton}>/tap_to_mintComm()</div>
-    </div>
-    <div className={styles.tierRightIII}>
-      <div className={styles.tierRightButton}>/tap_to_mint()</div>
-    </div>
-  </div>
-</div>
+      <RewardTiers />
     </div>
   );
 };

@@ -1,4 +1,20 @@
-/* Main wrapper style */
+/* Top Bar */
+
+.topBar {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #3D9DF2; /* Electric blue border */
+  background-color: #262626; /* Background color, adjust as needed */
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.connectButton {
+  align-content: left;
+  color: #F2F2F2; /* Text color, adjust as needed */
+}
+
+/* Home Page Structure */
 .mainWrapper {
   display: flex;
   flex-direction: column;
@@ -8,18 +24,6 @@
   margin: 0 auto; /* Helps in centering the wrapper if needed */
 }
 
-.topBar {
-  display: flex;
-  width: 100%;
-  background-color: #262626; /* Background color, adjust as needed */
-}
-
-.connectButton {
-  align-content: left;
-  color: #F2F2F2; /* Text color, adjust as needed */
-}
-
-/* Centered content area, you can use this for your main content */
 .centeredContent {
   max-width: 1200px; /* Max width for your content */
   width: 100%; /* Makes it responsive */
@@ -32,6 +36,7 @@
 .Title {
   display: flex;
   flex-direction: column; /* Stack the title and subtitle vertically */
+  margin-top: 5px; /* Space it a bit from the element above it */
   align-items: center; /* Center-align the text */
   margin-bottom: 20px; /* Adds some space below the title section */
 }
@@ -44,6 +49,40 @@
   margin-bottom: 5px; /* And a bit from the element below */
 }
 
+.contentArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Add some space around the items if needed */
+}
+
+.menu {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Adjust the space between cards */
+  order: 2; /* Switch sides */
+  margin-right: 10px; /* Reduce space on the right */
+}
+
+.mainContent {
+  width: 1024px; /* Hero Image Size */
+  min-width: 1024px;
+  height: 576px; /* Hero Image Size */
+  background-color: #1a1a1d; /* Background color */
+  order: 1; /* Switch sides */
+  margin-left: 10px; /* Adjust as needed to reduce space */
+  margin-right: 20px; /* Increase or decrease as per requirement */
+  border: 1px solid #557c9e; /* Muted blue for the border */
+}
+
+.videoIframe {
+  width: 100%; /* Make the video iframe take up 100% of its parent's width */
+  height: 100%; /* Make the video iframe take up 100% of its parent's height */
+  border: none; /* Remove border */
+}
+
+/* Funding Goal */
 .fundingCard {
   background-color: #262626; /* Matching the body's background */
   border-radius: 0 0 20px; /* Elegant curves */
@@ -78,7 +117,7 @@
   transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
 }
 
-.amountRaised {
+.goalRaised {
   font-size: 1.5rem; /* Larger font size for emphasis */
   color: #3D9DF2; 
   font-weight: bold; /* Make it bold to stand out */
@@ -96,7 +135,7 @@
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
-
+/* Members Joined DAO */
 .memberCard {
   background-color: #262626; /* Matching the body's background */
   margin: 0.02rem;
@@ -124,7 +163,7 @@
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
-
+/* Time Left in Campaign */
 .daysCard {
   background-color: #262626; /* Matching the body's background */
   border-radius: 0 0 20px; /* Elegant curves */
@@ -153,7 +192,7 @@
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
-
+/* Call to Action */
 .backingCard {
   background-color: #262626;
   border: 1px solid #F2F2F2;
@@ -194,40 +233,7 @@
   border-color: #3D9DF2; /* Bright electric blue for the border */
   transform: translateY(-5px); /* Slight lift effect */
 }
-
-.contentArea {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* Add some space around the items if needed */
-}
-
-.menu {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px; /* Adjust the space between cards */
-  order: 2; /* Switch sides */
-  margin-right: 10px; /* Reduce space on the right */
-}
-
-.mainContent {
-  width: 1024px; /* Hero Image Size */
-  min-width: 1024px;
-  height: 576px; /* Hero Image Size */
-  background-color: #1a1a1d; /* Background color */
-  order: 1; /* Switch sides */
-  margin-left: 10px; /* Adjust as needed to reduce space */
-  margin-right: 20px; /* Increase or decrease as per requirement */
-  border: 1px solid #557c9e; /* Muted blue for the border */
-}
-
-.videoIframe {
-  width: 100%; /* Make the video iframe take up 100% of its parent's width */
-  height: 100%; /* Make the video iframe take up 100% of its parent's height */
-  border: none; /* Remove border */
-}
-
+/* Home Bottom | Banner */
 .banner {
   display: flex;
   justify-content: space-between;
@@ -255,8 +261,21 @@
   height: 80px; /* Example size, adjust as needed */
   background-color: #3D9DF2; /* Placeholder for the icon, replace with actual image */
 }
+/* Page Transition */
+.newPageA {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-top: 1px solid #3D9DF2; 
+  padding: 0 30px; /* Healthy margins on either end */
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #262626; /* Assuming a dark theme; adjust as needed */
+}
 
-.subBanner {
+.newPageB {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -265,13 +284,12 @@
   padding: 0 30px; /* Healthy margins on either end */
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 20px;
   background-color: #262626; /* Assuming a dark theme; adjust as needed */
 }
-
-.parentContainer {
-  display: flex;
-  justify-content: space-between; /* Aligns children (left and right containers) on opposite ends */
-  height: 100vh; /* Full viewport height */
+/* Reward Tiers */
+.tierRow {
+display:flex;
 }
 
 .tierContainerLeft {
@@ -279,6 +297,13 @@
   flex-direction: column; /* Stack the cards vertically */
   align-items: center; /* Center the cards horizontally within the container */
   gap: 20px; /* Space between cards */
+  width: 902px; /* Width of each card */
+  height: 302px; /* Height of each card */
+  border: 1px solid #3D9DF2; /* Electric blue border */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  box-sizing: border-box; /* Includes border in the width and height calculations */
 }
 
 .tierContainerRight {
@@ -349,10 +374,6 @@
   height: 302px; /* Height of each card */
   box-sizing: border-box; /* Includes border in the width and height calculations */
   margin-top: 20px;
-}
-
-.tierRightInfo {
-
 }
 
 .tierRightButton {

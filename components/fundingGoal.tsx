@@ -16,7 +16,7 @@ const FundingGoal = ({ raisedAmount, goalAmount }: FundingGoalProps) => {
       <div className={styles.fundingMeterContainer}>
         <div className={styles.fundingMeter} style={{ width: `${fundingPercentage}%` }}></div>
       </div>
-      <div className={styles.amountRaised}>Ξ {raisedAmount}</div>
+      <div className={styles.goalRaised}>Ξ {raisedAmount}</div>
       <div className={styles.goalAmount}>pledged of Ξ{goalAmount} Goal</div>
     </div>
   );
