@@ -2,7 +2,6 @@ import { useState } from 'react';
 import React, { useRef } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import FundingGoal from '../components/fundingGoal';
@@ -67,7 +66,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className={styles.newPageB}>
-          //MEMBERSHIP_rewards
+        {"//MEMBERSHIP_rewards"}
       </div>
     
     <RewardTiers />  
