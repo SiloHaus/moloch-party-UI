@@ -3,15 +3,15 @@
 .topBar {
   display: flex;
   width: 100%;
+  margin-top: 5px;
   border-bottom: 1px solid #3D9DF2; /* Electric blue border */
   background-color: #262626; /* Background color, adjust as needed */
-  padding-bottom: 5px;
-  margin-bottom: 5px;
 }
 
 .connectButton {
   align-content: left;
   color: #F2F2F2; /* Text color, adjust as needed */
+  margin-bottom: 15px;
 }
 
 /* Home Page Structure */
@@ -43,7 +43,7 @@
 }
 
 .cardSubtitle {
-  font-size: 1.1rem; /* Larger font size for emphasis */
+  font-size: 22px;
   color: #F2F2F2; /* Keeps the color consistent with the title */
   text-align: left; /* Ensures subtitle is center-aligned */
   margin-top: 5px; /* Space it a bit from the element above it */
@@ -93,29 +93,55 @@
   height: 100px;
   color: #F2F2F2; /* Set default text color to light gray */
 }
-
+/* Existing styles for the primary funding meter */
 .fundingMeterContainer {
-  width: 100%; /* Full width to represent the total goal */
-  border: 1px solid #3D9DF2; /* Border around the entire funding meter */
-  border-radius: 1px; /* Rounded corners for the container */
-  background-color: #1a1a1d; /* Background color for the unfilled part */
-  height: 7px; /* Height of the container */
-  position: relative; /* Establishes a positioning context for .fundingMeter */
-  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  width: 100%;
+  border: 1px solid #3D9DF2;
+  border-radius: 1px;
+  background-color: #1a1a1d;
+  height: 7px;
+  position: relative;
+  margin-bottom: 5px; /* Added to separate the stretch goal meter from the primary meter */
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.fundingMeterContainer:hover {
-  box-shadow: 0 0 8px #3D9DF2; /* Glowing effect on hover */
+.fundingMeterContainer:hover { /* Apply hover effect to both containers */
+  box-shadow: 0 0 8px #3D9DF2; /* Change to a vibrant gold for the hover effect */
+}
+
+.bonusMeterContainer:hover { /* Apply hover effect to both containers */
+  box-shadow: 0 0 8px #FFD700; /* Change to a vibrant gold for the hover effect */
 }
 
 .fundingMeter {
-  background-color: #3D9DF2; /* Bright blue color for successful progress indication */
-  height: 5px; /* Height of the filled part */
-  border-radius: 1px; /* Rounded corners for a polished look */
-  position: absolute; /* Positioned absolutely within .fundingMeterContainer */
-  top: 1px; /* Align top with container's border */
-  left: 1px; /* Align left with container's border */
-  transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
+  background-color: #3D9DF2;
+  height: 5px;
+  border-radius: 1px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Styles for the bonus (stretch goal) meter */
+.bonusMeterContainer {
+  width: 100%;
+  border: 1px solid #FFD700; /* Golden border for distinction */
+  background-color: #1a1a1d; /* Matching background color */
+  height: 7px;
+  margin-top: 8px; /* Space between the primary meter and stretch meter */
+  position: relative;
+  width: 100%;
+}
+
+.bonusMeter {
+  background-color: #FFD700; /* Golden color for the stretch goal meter */
+  height: 5px;
+  position: absolute;
+  left: 0;
+  top: 1px; /* Align within its container */
+  transition: width 0.3s ease-in-out; /* Smooth transition for filling effect */
+  height: 100%; /* Fill the container's height */
 }
 
 .goalRaised {
@@ -136,6 +162,7 @@
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
+
 /* Members Joined DAO */
 .memberCard {
   background-color: #262626; /* Matching the body's background */
@@ -164,6 +191,7 @@
   margin-bottom: 5px; /* And a bit from the element below */
   margin-left: 10px;
 }
+
 /* Time Left in Campaign */
 .daysCard {
   background-color: #262626; /* Matching the body's background */
@@ -278,7 +306,7 @@
   background-color: #262626; /* Dark background for visibility */
   color: #F2F2F2; /* Light text color for contrast */
   white-space: nowrap;
-  padding: 10px 10px;
+  padding: 1px 10px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -334,6 +362,7 @@
   margin-bottom: 20px;
   margin-top: 20px;
   background-color: #262626; /* Assuming a dark theme; adjust as needed */
+  font-size: 21px;
 }
 /* Funding Goals */
 

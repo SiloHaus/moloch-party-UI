@@ -11,7 +11,7 @@ const VictoryBanner: React.FC<VictoryBannerProps> = ({ isVisible }) => {
 
   return (
     <div className={styles.congratsBanner}>
-      Campaign Successfully Funded!
+      MEMBERSHIP EXPANSION UNLOCKED! -- shizzy.eth has been commissioned 3Ξ to paint 69 Velodrome Themed, Biker Waifus!
     </div>
   );
 };

@@ -1,21 +1,5 @@
 # TODO
 
-## STRUCTURE
-
-* styles.topBar bottom-margin 10px;
-* Text-Size for /ALCHEMISTRESSES_expansionPack
-* Text-Size for //MEMBERSHIP_rewards
-
-### FundingBar2
-
-* FUNDED!
-* Gold Colored funding bar for overflow funding beyond Goal.
-* Additional Funding purchases VELO-USDC LP
-
-### Membership
-
-* Numbers Link to molochrdf.admin.fun
-
 ### Hero1.png | Hero2.png | Hero3.png | Connections to Funding Gauge
 
 * Create Hero1.png explaining Campaign purpose, and connect it to 0 to 1.1 ETH raised.
@@ -64,3 +48,4 @@
   * Does that balance accurately represent itself on gauges?
 * How much time is left in the campaign before comms close?
 * Withdraw Page could use deBank API for Token Balances | NFT Balances
+  * https://docs.cloud.debank.com/en/readme/api-pro-reference/user

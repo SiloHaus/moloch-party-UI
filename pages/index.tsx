@@ -15,8 +15,9 @@ import VictoryBanner from '../components/victoryBanner';
 
 const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
-  const [raisedAmount, setRaisedAmount] = useState(2.5);
+  const [raisedAmount, setRaisedAmount] = useState(3.5);
   const [goalAmount, setGoalAmount] = useState(3);
+  const [stretchAmount, setStretchAmount] = useState(10);
   const [memberNumber, setMemberNumber] = useState(69);
   const [daysLeft, setDaysLeft] = useState(5);
   const isVictoryBannerVisible = raisedAmount >= goalAmount;
@@ -45,7 +46,7 @@ const Home: NextPage = () => {
 
               <div className={styles.contentArea}>
                 <div className={styles.menu}>
-                      <FundingGoal raisedAmount={raisedAmount} goalAmount={goalAmount} />
+                      <FundingGoal raisedAmount={raisedAmount} goalAmount={goalAmount} stretchAmount={stretchAmount} />
                       <MemberCount memberNumber={memberNumber} />
                       <DaysLeft daysLeft={daysLeft} />
                       <TapToJoin />
