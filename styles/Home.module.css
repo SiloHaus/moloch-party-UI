@@ -264,6 +264,28 @@
   background-color: #F2F2F2; /* Placeholder for the icon, replace with actual image */
 }
 
+/* VictoryBanner.module.css */
+@keyframes scrollText {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.congratsBanner {
+  position: fixed;
+  top: 0; /* Adjust based on where you want the banner to appear */
+  width: 100%;
+  height: auto;
+  background-color: #262626; /* Dark background for visibility */
+  color: #F2F2F2; /* Light text color for contrast */
+  white-space: nowrap;
+  padding: 10px 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scrollText 15s linear infinite;
+}
+
 /* New styles for filled sections */
 .fillColor {
   background-color: #D6D6D6; /* Muted form of grey for fill */

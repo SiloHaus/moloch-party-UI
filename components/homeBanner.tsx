@@ -8,21 +8,27 @@ interface HomeBannerProps {
 
 const HomeBanner = ({ raisedAmount, goalAmount }: HomeBannerProps) => {
   const sections = 3; // Total number of sections
-  const milestones = [1, 2, 3]; // Define ETH milestones
 
   return (
     <div className={styles.banner}>
-      {milestones.map((milestone, index) => {
-        const fillPercentage = Math.min(100, (raisedAmount / ((index + 1) * (goalAmount / sections))) * 100);
+      {[...Array(sections)].map((_, index) => {
+        // Calculate the milestone for each section as a fraction of the goalAmount
+        const milestone = ((index + 1) * goalAmount) / sections;
         const isMilestoneReached = raisedAmount >= milestone;
-        const milestoneText = `${milestone} Ξ`;
+        
+        // Calculate fillPercentage for the current section
+        // This calculates what fraction of this section's goal has been raised
+        let fillPercentage = Math.max(0, Math.min(100, (raisedAmount - (index * goalAmount / sections)) / (goalAmount / sections) * 100));
+        
+        // Ensure that only the portion up to the raisedAmount is filled
+        fillPercentage = isMilestoneReached ? 100 : fillPercentage;
 
         return (
           <div key={index} className={styles.bannerItem}>
-            {/* Conditionally render the milestone box */}
+            {/* Render the milestone box if the milestone is reached */}
             {isMilestoneReached && (
               <div className={styles.milestoneBox}>
-                {milestoneText}
+                {`${(index + 1) * (goalAmount / sections)} Ξ`}
               </div>
             )}
             <div className={styles.fillLevel} style={{

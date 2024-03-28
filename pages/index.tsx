@@ -12,13 +12,15 @@ import TapToJoin from '../components/tapToJoin';
 import HomeBanner from '../components/homeBanner';
 import RewardTiers from '../components/rewardTiers';
 import MainContent from '../components/mainContent';
+import VictoryBanner from '../components/victoryBanner';
 
 const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
-  const [raisedAmount, setRaisedAmount] = useState(3.1);
+  const [raisedAmount, setRaisedAmount] = useState(2.5);
   const [goalAmount, setGoalAmount] = useState(3);
   const [memberNumber, setMemberNumber] = useState(69);
   const [daysLeft, setDaysLeft] = useState(5);
+  const isVictoryBannerVisible = raisedAmount >= goalAmount;
   
   return (
     <div className={styles.container}>
@@ -57,7 +59,9 @@ const Home: NextPage = () => {
       </div>
       
     <HomeBanner raisedAmount={raisedAmount} goalAmount={goalAmount} />
-      
+    
+    <VictoryBanner isVisible={isVictoryBannerVisible} />
+
       <div className={styles.newPageA}>
         <div id="targetAnchor"></div>
       </div>
