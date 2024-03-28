@@ -37,14 +37,15 @@
   display: flex;
   flex-direction: column; /* Stack the title and subtitle vertically */
   margin-top: 5px; /* Space it a bit from the element above it */
-  align-items: center; /* Center-align the text */
+  align-items: left; /* Center-align the text */
   margin-bottom: 20px; /* Adds some space below the title section */
+  max-width: 1200px; /* Max width for your content */
 }
 
 .cardSubtitle {
   font-size: 1.1rem; /* Larger font size for emphasis */
   color: #F2F2F2; /* Keeps the color consistent with the title */
-  text-align: center; /* Ensures subtitle is center-aligned */
+  text-align: left; /* Ensures subtitle is center-aligned */
   margin-top: 5px; /* Space it a bit from the element above it */
   margin-bottom: 5px; /* And a bit from the element below */
 }
@@ -66,14 +67,14 @@
 }
 
 .mainContent {
-  width: 1024px; /* Hero Image Size */
-  min-width: 1024px;
-  height: 576px; /* Hero Image Size */
+  width: 1026px; /* Hero Image Size */
+  min-width: 1026px;
+  height: 578px; /* Hero Image Size */
   background-color: #1a1a1d; /* Background color */
   order: 1; /* Switch sides */
   margin-left: 10px; /* Adjust as needed to reduce space */
   margin-right: 20px; /* Increase or decrease as per requirement */
-  border: 1px solid #557c9e; /* Muted blue for the border */
+  border: 1px solid #F2F2F2;
 }
 
 .videoIframe {
@@ -233,33 +234,58 @@
   border-color: #3D9DF2; /* Bright electric blue for the border */
   transform: translateY(-5px); /* Slight lift effect */
 }
-/* Home Bottom | Banner */
+/* Banner Gauge */
 .banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 120px;
-  border: 1px solid #3D9DF2; /* Electric blue border */
-  padding: 0 30px; /* Healthy margins on either end */
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #262626; /* Assuming a dark theme; adjust as needed */
+  background-color: #262626; /* Dark theme background */
 }
 
 .bannerItem {
+  position: relative;
+  border: 1px solid #F2F2F2;
+  height: 50px;
+  width: 30%;
+  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 50px;
-  margin-right: 50px;
-  gap: 20px; /* Space between icon and message */
 }
 
 .bannerIcon {
   width: 120px; /* Example size, adjust as needed */
-  height: 80px; /* Example size, adjust as needed */
-  background-color: #3D9DF2; /* Placeholder for the icon, replace with actual image */
+  height: 80px; 
+  /* Example size, adjust as needed */
+  background-color: #F2F2F2; /* Placeholder for the icon, replace with actual image */
+}
+
+/* New styles for filled sections */
+.fillColor {
+  background-color: #D6D6D6; /* Muted form of grey for fill */
+}
+
+.fillLevel {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: #D6D6D6; /* Fill color */
+  transition: width 0.5s ease;
+}
+
+.milestoneBox {
+  position: absolute;
+  background-color: #333; /* Darker background for contrast */
+  color: #F2F2F2; /* Light color text */
+  padding: 10px 10px;
+  /*transform: translateY(-100%); /* Position above the fill level */
+  /*margin-top: -10px; /* Ensure it does not touch the bar edges */
+  z-index: 2; /* Ensure it's above other elements in the bannerItem */
 }
 /* Page Transition */
 .newPageA {
@@ -287,119 +313,67 @@
   margin-top: 20px;
   background-color: #262626; /* Assuming a dark theme; adjust as needed */
 }
-/* Reward Tiers */
+/* Funding Goals */
+
+/* Reward Tier Rows */
 .tierRow {
-display:flex;
+  display: flex;
+  justify-content: space-between; /* Distributes space between left and right containers */
+  align-items: center; /* Aligns items vertically */
+  gap: 20px; /* Space between left and right containers */
+  margin-bottom: 20px; /* Space between each row */
+  flex-direction: row; /* Stacks the containers vertically on smaller screens */
 }
 
-.tierContainerLeft {
+.tierContainer {
   display: flex;
-  flex-direction: column; /* Stack the cards vertically */
-  align-items: center; /* Center the cards horizontally within the container */
-  gap: 20px; /* Space between cards */
-  width: 902px; /* Width of each card */
-  height: 302px; /* Height of each card */
-  border: 1px solid #3D9DF2; /* Electric blue border */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  box-sizing: border-box; /* Includes border in the width and height calculations */
+  width: 100%; /* Each container takes up half the width of the tierRow */
+  justify-content: center; /* Centers content horizontally in each container */
+  align-items: center; /* Centers content vertically */
 }
 
-.tierContainerRight {
+.tierImageContainer, .tierInfoContainer {
   display: flex;
-  flex-direction: column; /* Stack the cards vertically */
-  align-items: center; /* Center the cards horizontally within the container */
+  justify-content: center; /* Adjust as needed for content */
+  align-items: center; /* Adjust as needed for content */
+  width: 100%; /* Ensures container fills its parent's width */
+  width: 902px; /* Fixed width for the image */
+  height: 302px; /* Fixed height for the image */
+  border: 1px solid #3D9DF2;
 }
 
-.tierI {
-  width: 902px; /* Width of each card */
-  height: 302px; /* Height of each card */
-  border: 1px solid #3D9DF2; /* Electric blue border */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  box-sizing: border-box; /* Includes border in the width and height calculations */
+.tierImage {
+  width: 900px; /* Fixed width for the image */
+  height: 300px; /* Fixed height for the image */
+  max-width: 100%; /* Allows the image to be responsive */
+  height: auto; /* Maintains aspect ratio */
 }
 
-.tierRightI {
+.tierRightInfo {
   display: flex;
-  flex-direction: column; /* Keep this to stack children vertically */
-  justify-content: flex-start; /* This aligns children to the top */
-  align-items: right; /* This places  the children horizontally */
-  width: 902px; /* Width of each card */
-  height: 302px; /* Height of each card */
-  box-sizing: border-box; /* Includes border in the width and height calculations */
-}
-
-.tierII {
-  width: 902px; /* Width of each card */
-  height: 302px; /* Height of each card */
-  border: 1px solid #3D9DF2; /* Electric blue border */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  box-sizing: border-box; /* Includes border in the width and height calculations */
-  margin-top: 20px;
-}
-
-.tierRightII {
-  display: flex;
-  flex-direction: column; /* Keep this to stack children vertically */
-  justify-content: flex-start; /* This aligns children to the top */
-  align-items: right; /* This places  the children horizontally */
-  width: 902px; /* Width of each card */
-  height: 302px; /* Height of each card */
-  box-sizing: border-box; /* Includes border in the width and height calculations */
-  margin-top: 20px;
-}
-
-.tierIII {
-  width: 902px; /* Width of each card */
-  height: 302px; /* Height of each card */
-  border: 1px solid #3D9DF2; /* Electric blue border */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  box-sizing: border-box; /* Includes border in the width and height calculations */
-  margin-top: 20px;
-}
-
-.tierRightIII {
-  display: flex;
-  flex-direction: column; /* Keep this to stack children vertically */
-  justify-content: flex-start; /* This aligns children to the top */
-  align-items: right; /* This places  the children horizontally */
-  width: 902px; /* Width of each card */
-  height: 302px; /* Height of each card */
-  box-sizing: border-box; /* Includes border in the width and height calculations */
-  margin-top: 20px;
+  justify-content: center; /* Centers the button or additional info */
+  align-items: center;
+  width: 100%; /* Stretches to fill the container */
+  padding: 20px; /* Adjust padding as needed */
 }
 
 .tierRightButton {
-  background-color: #262626; /* Matching the body's background */
-  border: 1px solid #F2F2F2; /* Muted blue for the border */
-  transition: border-color 0.3s ease, transform 0.3s ease; /* Include color in transition */
+  cursor: pointer;
+  background-color: #262626;
+  border: 1px solid #F2F2F2;
+  transition: border-color 0.3s ease, transform 0.3s ease;
   width: 400px;
   height: 50px;
-  color: #F2F2F2; /* Set default text color to light gray */
+  color: #F2F2F2;
   padding: 9px;
-  margin-left: 10px;
-  margin-right: 10px;
+  cursor: pointer;
+  position: relative; /* Needed for absolute positioning of the child element */
+  width: 100%; /* Allows the button to adjust its width on smaller screens */
+  max-width: 400px; /* Maximum width the button can expand to */
+  margin: 20px; /* Space between left and right containers */
 }
 
 .tierRightButton:hover {
   border-color: #3D9DF2; /* Bright electric blue for the border */
   transform: translateY(-5px); /* Slight lift effect */
-}
-
-/* This ensures that the icons container does not disrupt layout */
-.socialIcons {
-  display: inline-block;
-}
-
-.socialIcons svg {
-  width: 25px;
-  height: 25px;
-  fill: #557c9e; /* Gold color for the icons */
 }

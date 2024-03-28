@@ -5,12 +5,22 @@ import styles from '../styles/Home.module.css'; // Adjust the path to your CSS f
 
 const TierI = () => {
   return (
-    <div className={styles.tierRow}> {/* Use a row style here if necessary */}
-      <div className={styles.tierContainerLeft}>
-        <Image src="/42.png" alt="Alchemistress OG" width={900} height={300} />
+     <div className={styles.tierRow}>
+      <div className={styles.tierContainer}>
+
+        {/* Left Side: Image */}
+        <div className={styles.tierImageContainer}>
+          <Image src="/42.png" alt="Alchemistress OG"  width={900} height={300} />
+        </div>
       </div>
-      <div className={styles.tierContainerRight}>
-        <button className={styles.tierRightButton}>/tap_to_mint()</button>
+      
+      <div className={styles.tierContainer}> {/* Right Side: Button and Info */}
+        <div className={styles.tierRightInfo}>
+          <div className={styles.tierRightButton}>/tap_to_mint()</div>
+          <div>
+            Information about membership goes here.
+          </div>
+        </div>
       </div>
     </div>
   );
