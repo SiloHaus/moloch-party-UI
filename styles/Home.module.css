@@ -110,7 +110,7 @@
 }
 
 .bonusMeterContainer:hover { /* Apply hover effect to both containers */
-  box-shadow: 0 0 8px #FFD700; /* Change to a vibrant gold for the hover effect */
+  box-shadow: 0 0 8px #8C8A52; /* Change to a vibrant gold for the hover effect */
 }
 
 .fundingMeter {
@@ -126,7 +126,7 @@
 /* Styles for the bonus (stretch goal) meter */
 .bonusMeterContainer {
   width: 100%;
-  border: 1px solid #FFD700; /* Golden border for distinction */
+  border: 1px solid #8C8A52; /* Golden border for distinction */
   background-color: #1a1a1d; /* Matching background color */
   height: 7px;
   margin-top: 8px; /* Space between the primary meter and stretch meter */
@@ -135,7 +135,7 @@
 }
 
 .bonusMeter {
-  background-color: #FFD700; /* Golden color for the stretch goal meter */
+  background-color: #8C8A52; /* Golden color for the stretch goal meter */
   height: 5px;
   position: absolute;
   left: 0;

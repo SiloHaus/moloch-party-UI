@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -15,7 +14,7 @@ import VictoryBanner from '../components/victoryBanner';
 
 const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
-  const [raisedAmount, setRaisedAmount] = useState(3.5);
+  const [raisedAmount, setRaisedAmount] = useState(1);
   const [goalAmount, setGoalAmount] = useState(3);
   const [stretchAmount, setStretchAmount] = useState(10);
   const [memberNumber, setMemberNumber] = useState(69);
@@ -51,7 +50,8 @@ const Home: NextPage = () => {
                       <DaysLeft daysLeft={daysLeft} />
                       <TapToJoin />
                 </div>
-                <MainContent />
+                <MainContent raisedAmount={raisedAmount} goalAmount={goalAmount} />
+
               </div>
             </div>
           </main>
