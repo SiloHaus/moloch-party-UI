@@ -67,7 +67,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className={styles.newPageB}>
-        {"//MEMBERSHIP_rewards"}
+        {"//SELECT_your_reward"}
       </div>
     
     <RewardTiers />  

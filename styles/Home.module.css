@@ -378,9 +378,12 @@
 
 .tierContainer {
   display: flex;
-  width: 100%; /* Each container takes up half the width of the tierRow */
-  justify-content: center; /* Centers content horizontally in each container */
-  align-items: center; /* Centers content vertically */
+  position: relative; /* Add this line */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Ensure there's enough space for your content + button */
+  min-height: 300px; /* Example minimum height */
 }
 
 .tierImageContainer, .tierInfoContainer {
@@ -408,20 +411,42 @@
   padding: 20px; /* Adjust padding as needed */
 }
 
+.tierText {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .tierRightButton {
   cursor: pointer;
   background-color: #262626;
   border: 1px solid #F2F2F2;
   transition: border-color 0.3s ease, transform 0.3s ease;
-  width: 400px;
-  height: 50px;
   color: #F2F2F2;
   padding: 9px;
-  cursor: pointer;
-  position: relative; /* Needed for absolute positioning of the child element */
-  width: 100%; /* Allows the button to adjust its width on smaller screens */
-  max-width: 400px; /* Maximum width the button can expand to */
-  margin: 20px; /* Space between left and right containers */
+  max-width: 400px;
+  /* Remove properties related to layout and positioning */
+}
+
+.newTierLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5px;
+  border-top: 1px solid #3D9DF2; 
+  padding: 0 30px; /* Healthy margins on either end */
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: #262626; /* Assuming a dark theme; adjust as needed */
+}
+
+.tierRightButtonWrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex; /* Make it a flex container */
+  gap: 5px; /* Creates space between flex items */
 }
 
 .tierRightButton:hover {

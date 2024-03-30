@@ -1,25 +1,5 @@
 # TODO
 
-### Hero1.png | Hero2.png | Hero3.png | Connections to Funding Gauge
-
-* Create Hero1.png explaining Campaign purpose, and connect it to 0 to 1.1 ETH raised.
-* Create Hero2.png encouraging Campaign - and connect it to 1.1 to 2.99 ETH raised.
-* Connect Hero3.png [existing hero image] with 3 ETH raised, congratulating the funding.
-* Create Hero4.png -- excited about clicking /tap_to_join_moloch_party
-
-### Tier1: Mint
-
-* /tap_to_mint goes up
-* bullet point benefits for minting on hover
-* Activate Button appears on Click.
-
-### Tier2: Comm
-
-* placeholder commission
-* button and bullet point info
-* discord link | Instructions
-* Activate Button appears on Click.
-
 ### EXPANSION_UNLOCKED Page
 
 * Describing next steps for members who have joined, like "what now?"
