@@ -6,13 +6,11 @@
 
 #### fundingGoal.tsx [raisedAmount, goalAmount, stretchAmount]
 
-raisedAmount needs to exclude commission funds, and only be equity that is raised and deposited toward treasury.
+* raisedAmount needs to exclude commission funds, and only be equity that is raised and deposited toward treasury.
 
-Withdraws will also need to take place after the campaign concludes, which means that setRaisedAmount needs to be finalized before withdraw() is executed.
+* Withdraws will also need to take place after the campaign concludes, which means that setRaisedAmount needs to be finalized before withdraw() is executed. That way, the campaign registers as completed and funding score remains.
 
-That way, the campaign registeres as completed and funding score remains.
-
-goalAmount | stretchAmount can be set per campaign.
+* goalAmount | stretchAmount can be set per campaign.
 
 #### memberCount.tsx
 
