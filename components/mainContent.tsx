@@ -11,7 +11,7 @@ interface MainContentProps {
 const MainContent: React.FC<MainContentProps> = ({ raisedAmount, goalAmount }) => {
   console.log("Raised Amount:", raisedAmount, "Goal Amount:", goalAmount); // Debugging line
 
-  const imageSrc = raisedAmount < goalAmount ? "/heroComplete.png" : "/heroComplete.png";
+  const imageSrc = raisedAmount < goalAmount ? "/hero.png" : "/hero.png";
   const imageAlt = raisedAmount < goalAmount ? "Starting image" : "Finishing image";
 
   return (

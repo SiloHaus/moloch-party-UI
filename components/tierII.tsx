@@ -3,7 +3,11 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css'; // Adjust the path to your CSS file as necessary
 
-const TierII = () => {
+interface TierIIProps {
+  commLeft: number; // Assuming ogLeft is a number
+}
+
+const TierII: React.FC<TierIIProps> = ({ commLeft }) => {
   return (
      <div className={styles.tierRow}>
       <div className={styles.tierContainer}>
@@ -15,15 +19,17 @@ const TierII = () => {
       </div>
       
       <div className={styles.tierContainer}> {/* Right Side: Button and Info */}
-        <div className={styles.tierRightInfo}>
           <div className={styles.tierRightButtonWrapper}>
           <div className={styles.tierRightButton}>/tap_to_mintComm()</div>
           <div className={styles.tierRightButton}>/tap_to_activate()</div>
           <div className={styles.tierRightButton}>/book_with_Shizzy()</div>
           </div>
           <div className={styles.tierText}>
-            <p>MEMBERSHIP + ART COMMISSION: 0.42 Ξ + 0.2 Ξ</p>
-            Design a Custom Mistress, by Shizzy Aizawa.
+            <div className={styles.tierMembershipHeader}> {/* Flex container */}
+              <div>MEMBERSHIP: 0.62 Ξ</div>
+              <div>[{commLeft} Remaining]</div>
+            </div>
+            Design a Custom Mistress, fulfilled by Shizzy Aizawa.
             <p>Each NFT owns a Soulbound Moloch Share of an LP Cooperative.</p>
             <ul>
               <li>Submit Proposals | Vote to Govern</li>
@@ -32,7 +38,6 @@ const TierII = () => {
             </ul>
             Mint, Activate & Open a Commission Ticket.
           </div>
-        </div>
       </div>
     </div>
   );

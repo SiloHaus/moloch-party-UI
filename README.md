@@ -1,29 +1,53 @@
-This is a [RainbowKit](https://rainbowkit.com) + [wagmi](https://wagmi.sh) + [Next.js](https://nextjs.org/) project bootstrapped with [`create-rainbowkit`](/packages/create-rainbowkit).
+# INFO
 
-## Getting Started
+## TODO
 
-First, run the development server:
+### React Hooks
 
-```bash
+#### fundingGoal.tsx
+
+* raisedAmount - Currently Raised Funding
+* goalAmount - Set per Campaign
+* stretchAmount - Set per Campaign
+
+#### memberCount.tsx
+
+* memberNumber - Moloch Shares which exist in TBAs of Alchemistresses
+
+#### daysLeft.tsx
+
+* daysLeft
+
+#### tier1.tsx
+
+* ogLeft
+
+#### tier2.tsx
+
+* commLeft
+
+
+* What is the balance of currently funded contracts minus comms?
+  * Does that balance accurately represent itself on gauges?
+* How much time is left in the campaign before comms close?
+* Withdraw Page could use deBank API for Token Balances | NFT Balances
+  * https://docs.cloud.debank.com/en/readme/api-pro-reference/user
+
+## START
+
 npm run dev
-```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-## Learn More
+## REF
 
-To learn more about this stack, take a look at the following resources:
+* [RainbowKit Documentation](https://rainbowkit.com)
+* [wagmi Documentation](https://wagmi.sh)
+* [Next.js Documentation](https://nextjs.org/docs)
+* [the RainbowKit GitHub repository](https://github.com/rainbow-me/rainbowkit)
 
-- [RainbowKit Documentation](https://rainbowkit.com) - Learn how to customize your wallet connection flow.
-- [wagmi Documentation](https://wagmi.sh) - Learn how to interact with Ethereum.
-- [Next.js Documentation](https://nextjs.org/docs) - Learn how to build a Next.js application.
+## DEPLOY
 
-You can check out [the RainbowKit GitHub repository](https://github.com/rainbow-me/rainbowkit) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+* [Next.js deployment documentation](https://nextjs.org/docs/deployment)

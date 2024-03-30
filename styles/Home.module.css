@@ -312,6 +312,7 @@
   justify-content: center;
   align-items: center;
   animation: scrollText 15s linear infinite;
+  border: 1px solid #3D9DF2;
 }
 
 /* New styles for filled sections */
@@ -369,11 +370,10 @@
 /* Reward Tier Rows */
 .tierRow {
   display: flex;
-  justify-content: space-between; /* Distributes space between left and right containers */
-  align-items: center; /* Aligns items vertically */
+  justify-content: space-between;
   gap: 20px; /* Space between left and right containers */
-  margin-bottom: 20px; /* Space between each row */
-  flex-direction: row; /* Stacks the containers vertically on smaller screens */
+  /*margin-bottom: 20px; /* Space between each row */
+  /*flex-direction: row; /* Stacks the containers vertically on smaller screens */
 }
 
 .tierContainer {
@@ -383,14 +383,13 @@
   justify-content: center;
   align-items: center;
   height: auto; /* Ensure there's enough space for your content + button */
-  min-height: 300px; /* Example minimum height */
+  min-height: 280px; /* Example minimum height */
 }
 
 .tierImageContainer, .tierInfoContainer {
   display: flex;
   justify-content: center; /* Adjust as needed for content */
   align-items: center; /* Adjust as needed for content */
-  width: 100%; /* Ensures container fills its parent's width */
   width: 902px; /* Fixed width for the image */
   height: 302px; /* Fixed height for the image */
   border: 1px solid #3D9DF2;
@@ -403,12 +402,13 @@
   height: auto; /* Maintains aspect ratio */
 }
 
-.tierRightInfo {
+.tierMembershipHeader {
+  font-size: 18px;
   display: flex;
-  justify-content: center; /* Centers the button or additional info */
+  margin-bottom: 18px;
+  justify-content: space-between;
   align-items: center;
-  width: 100%; /* Stretches to fill the container */
-  padding: 20px; /* Adjust padding as needed */
+  min-width: 700px;
 }
 
 .tierText {
@@ -436,8 +436,8 @@
   border-top: 1px solid #3D9DF2; 
   padding: 0 30px; /* Healthy margins on either end */
   width: 100%;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 40px; 
+  margin-top: 40px;
   background-color: #262626; /* Assuming a dark theme; adjust as needed */
 }
 

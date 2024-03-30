@@ -14,11 +14,13 @@ import VictoryBanner from '../components/victoryBanner';
 
 const Home: NextPage = () => {
   // Example static state - replace these with real data from your smart contracts later
-  const [raisedAmount, setRaisedAmount] = useState(4);
+  const [raisedAmount, setRaisedAmount] = useState(2.4);
   const [goalAmount, setGoalAmount] = useState(3);
   const [stretchAmount, setStretchAmount] = useState(10);
   const [memberNumber, setMemberNumber] = useState(69);
   const [daysLeft, setDaysLeft] = useState(5);
+  const [ogLeft, setOGLeft] = useState(14);
+  const [commLeft, setCommLeft] = useState(10);
   const isVictoryBannerVisible = raisedAmount >= goalAmount;
   
   return (
@@ -62,17 +64,50 @@ const Home: NextPage = () => {
     
     <VictoryBanner isVisible={isVictoryBannerVisible} />
 
+{/* Reward Tiers Section */}
+
       <div className={styles.newPageA}>
         <div id="targetAnchor"></div>
       </div>
 
       <div className={styles.newPageB}>
-        {"//SELECT_your_reward"}
+        {"//MEMBERSHIP_rewards"}
       </div>
     
-    <RewardTiers />  
-    
+    <RewardTiers ogLeft={ogLeft} commLeft={commLeft} />  
+
+{/* BAAL | 6551 Structures */}    
+
+    <div className={styles.newPageA}>
+        <div id="targetAnchorB"></div>
     </div>
+
+    <div className={styles.newPageB}>
+        {"//ANATOMY_of_SILO"}
+    </div>
+
+{/* Equity | Rage Quit Rights */}    
+
+    <div className={styles.newPageA}>
+        <div id="targetAnchorC"></div>
+    </div>
+
+    <div className={styles.newPageB}>
+        {"//EQUITY_and_RAGE_QUIT"}
+    </div>
+
+{/* BAAL | 6551 Structures */}    
+
+    <div className={styles.newPageA}>
+        <div id="targetAnchorD"></div>
+    </div>
+
+    <div className={styles.newPageB}>
+        {"//TREASURY_balance_sheet"}
+    </div>
+
+
+  </div>  
   );
 };
 
