@@ -2,6 +2,10 @@
 
 ## TODO
 
+### Aesthetic
+
+* Color and Style coordination with DAOhaus Apps
+
 ### React Hooks
 
 #### fundingGoal.tsx [raisedAmount, goalAmount, stretchAmount]
