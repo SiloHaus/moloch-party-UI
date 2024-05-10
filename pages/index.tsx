@@ -5,7 +5,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import FundingGoal from '../components/fundingGoal';
 import MemberCount from '../components/memberCount';
-import DaysLeft from '../components/daysLeft';
+import HoursLeft from '../components/hoursLeft';
 import TapToJoin from '../components/tapToJoin';
 import HomeBanner from '../components/homeBanner';
 import RewardTiers from '../components/rewardTiers';
@@ -13,14 +13,15 @@ import MainContent from '../components/mainContent';
 import VictoryBanner from '../components/victoryBanner';
 
 const Home: NextPage = () => {
-  // Example static state - replace these with real data from your smart contracts later
+  // Connect these to Testnet Contracts to pull State
   const [raisedAmount, setRaisedAmount] = useState(2.4);
   const [goalAmount, setGoalAmount] = useState(3);
   const [stretchAmount, setStretchAmount] = useState(10);
   const [memberNumber, setMemberNumber] = useState(69);
-  const [daysLeft, setDaysLeft] = useState(5);
-  const [ogLeft, setOGLeft] = useState(14);
-  const [commLeft, setCommLeft] = useState(10);
+  const [hoursLeft, setHoursLeft] = useState(24);
+  const [mintRemaining, setMintRemaining] = useState(14);
+  const [costToMint, setCostToMint] = useState(0.42);
+  const [priceComm, setPriceComm] = useState(0.69);
   const isVictoryBannerVisible = raisedAmount >= goalAmount;
   
   return (
@@ -49,7 +50,7 @@ const Home: NextPage = () => {
                 <div className={styles.menu}>
                       <FundingGoal raisedAmount={raisedAmount} goalAmount={goalAmount} stretchAmount={stretchAmount} />
                       <MemberCount memberNumber={memberNumber} />
-                      <DaysLeft daysLeft={daysLeft} />
+                      <HoursLeft hoursLeft={hoursLeft} />
                       <TapToJoin />
                 </div>
                 <MainContent raisedAmount={raisedAmount} goalAmount={goalAmount} />
@@ -74,7 +75,7 @@ const Home: NextPage = () => {
         {"//MEMBERSHIP_rewards"}
       </div>
     
-    <RewardTiers ogLeft={ogLeft} commLeft={commLeft} />  
+    <RewardTiers mintRemaining={mintRemaining} costToMint={costToMint} priceComm={priceComm} />  
 
 {/* BAAL | 6551 Structures */}    
 

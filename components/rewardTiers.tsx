@@ -5,16 +5,17 @@ import TierII from './tierII'; // Adjust path as necessary
 import styles from '../styles/Home.module.css'; // Adjust the path to your CSS file as necessary
 
 interface RewardTiersProps {
-  ogLeft: number;
-  commLeft: number;
+  mintRemaining: number;
+  costToMint: number;
+  priceComm: number;
 }
 
-const RewardTiers: React.FC<RewardTiersProps> = ({ ogLeft, commLeft }) => {
+const RewardTiers: React.FC<RewardTiersProps> = ({ mintRemaining, costToMint, priceComm }) => {
   return (
     <div className={styles.notAStyle}>
-      <TierI ogLeft={ogLeft} />
+      <TierI mintRemaining={mintRemaining} costToMint={costToMint} />
       <div className={styles.newTierLine}></div>
-      <TierII commLeft={commLeft} />
+      <TierII mintRemaining={mintRemaining} priceComm={priceComm} />
       {/* Add TierIII and so on, as necessary */}
     </div>
   );

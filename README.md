@@ -21,20 +21,18 @@ Etherscan API || MolochShareAddress Holder Count.
 MolochParty.sol
   uint256 public endTime;
 
-#### tier1.tsx [mintSupply, totalMinted, costToMint]
+#### tier1.tsx [mintRemaining, costToMint]
 
 MolochParty.sol
-    uint256 public mintSupply;
-    uint256 public totalMinted;
+    uint256 public mintRemaining;
     uint256 public costToMint;
 
 * function contributeTierI()
 
-#### tier2.tsx [mintSupply, totalMinted, priceComm]
+#### tier2.tsx [mintRemaining, priceComm]
 
 MolochParty.sol
-    uint256 public mintSupply;
-    uint256 public totalMinted;
+    uint256 public mintRemaining;
     uint256 public priceComm;
 
 * function contributeTierII()
