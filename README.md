@@ -2,49 +2,42 @@
 
 ## TODO
 
-### Aesthetic
-
-* Color and Style coordination with DAOhaus Apps
-
 ### React Hooks
 
 #### fundingGoal.tsx [raisedAmount, goalAmount, stretchAmount]
 
-* raisedAmount needs to exclude commission funds, and only be equity that is raised and deposited toward treasury.
+MolochParty.sol
 
-* Withdraws will also need to take place after the campaign concludes, which means that setRaisedAmount needs to be finalized before withdraw() is executed. That way, the campaign registers as completed and funding score remains.
-
-* goalAmount | stretchAmount can be set per campaign.
-
-* raisedAmount needs to exclude commission funds, and if it does, then the gauges will accurately read. This means that there needs to be a splitter inside of the contract which sends the funds off to shizzy's COMM-BANK on contribution. That way, the main funds are always reflective of the balance in the contract.
-
-* Shizzy's COMM-BANK would be a smart contract that receives commission funds, and is only withdrawable by shizzy.eth
+    uint256 public goalAmount; 
+    uint256 public raisedAmount;
+    uint256 public stretchAmount;
 
 #### memberCount.tsx [memberNumber]
 
-* memberNumber is pulled from Moloch Shares which exist in TBAs of Alchemistresses. The numbers will initially be incorrect, until the 14 from the treasury have been absorbed into circulation.
+Etherscan API || MolochShareAddress Holder Count.
 
 #### daysLeft.tsx [daysLeft]
 
-* daysLeft can be set per Campaign, though for simplicity, and FOMO, it ought to be set to 1. It would be better to have a standard pop up campaign style, with carefully prepared outreach strategies | materials, rather than dead on the water campaigns.
+MolochParty.sol
+  uint256 public endTime;
 
-#### tier1.tsx [ogLeft, sideBatch]
+#### tier1.tsx [mintSupply, totalMinted, costToMint]
 
-* ogLeft == How many Alchemistress | OGs are available and owned by the Treasury. These need to be sold First.
+MolochParty.sol
+    uint256 public mintSupply;
+    uint256 public totalMinted;
+    uint256 public costToMint;
 
-* sideBatch is a variable that does not yet exist. It stands for how many of the Batch II NFTs from Shizzy's collection are minted after the ogLeft == 0.
+* function contributeTierI()
 
-* ogLeft ought to sell out, and then afterward, if more people want that collection, they can mint from the SideBatch.
+#### tier2.tsx [mintSupply, totalMinted, priceComm]
 
-* mint() is not longer able to be called, once the campaign has come to an end.
+MolochParty.sol
+    uint256 public mintSupply;
+    uint256 public totalMinted;
+    uint256 public priceComm;
 
-#### tier2.tsx [commLeft]
-
-* commLeft is about how many custom slots Shizzy is willing to take on at once.
-
-* Technically, mintComm() and mint() are two different manifold extensions, under the same NFT Contract, each with their own BaseURI. mintComm() has a placeholder image, all of which are replaced when the commissions have been completed.
-
-* mintComm() is not longer able to be called, once the campaign has come to an end.
+* function contributeTierII()
 
 ### DISCORD TICKET BOT
 
