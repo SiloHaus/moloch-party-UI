@@ -15,7 +15,7 @@ import VictoryBanner from '../components/victoryBanner';
 const Home: NextPage = () => {
   // Connect these to Testnet Contracts to pull State
   const [raisedAmount, setRaisedAmount] = useState(2.4);
-  const [goalAmount, setGoalAmount] = useState(3);
+  const [goalAmount, setGoalAmount] = useState(4.2);
   const [stretchAmount, setStretchAmount] = useState(10);
   const [memberNumber, setMemberNumber] = useState(69);
   const [hoursLeft, setHoursLeft] = useState(24);
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
               </div>
 
               <div className={styles.Title}>
-                <div className={styles.cardSubtitle}>/ALCHEMISTRESSES_expansionPack</div>
+                <div className={styles.cardSubtitle}>/UNDINE | Sudoswap LP Cooperative</div>
               </div>
       <div className={styles.mainWrapper}>
         <div className={styles.centeredContent}>
@@ -86,27 +86,6 @@ const Home: NextPage = () => {
     <div className={styles.newPageB}>
         {"//ANATOMY_of_SILO"}
     </div>
-
-{/* Equity | Rage Quit Rights */}    
-
-    <div className={styles.newPageA}>
-        <div id="targetAnchorC"></div>
-    </div>
-
-    <div className={styles.newPageB}>
-        {"//EQUITY_and_RAGE_QUIT"}
-    </div>
-
-{/* BAAL | 6551 Structures */}    
-
-    <div className={styles.newPageA}>
-        <div id="targetAnchorD"></div>
-    </div>
-
-    <div className={styles.newPageB}>
-        {"//TREASURY_balance_sheet"}
-    </div>
-
 
   </div>  
   );

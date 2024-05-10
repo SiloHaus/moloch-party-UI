@@ -11,7 +11,7 @@ const VictoryBanner: React.FC<VictoryBannerProps> = ({ isVisible }) => {
 
   return (
     <div className={styles.congratsBanner}>
-      MEMBERSHIP EXPANSION UNLOCKED! -- shizzy.eth has been commissioned 3Ξ to paint 69 Biker Waifus!
+      /Please_be_excited_for_what_is_to_come
     </div>
   );
 };

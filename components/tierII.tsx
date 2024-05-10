@@ -30,7 +30,7 @@ const TierII: React.FC<TierIIProps> = ({ mintRemaining, priceComm }) => {
               <div>MEMBERSHIP: {priceComm} Ξ</div>
               <div>[{mintRemaining} Remaining]</div>
             </div>
-            Design a Custom Mistress, fulfilled by Shizzy Aizawa.
+            Design a Custom Undine, painted by Root.
             <p>Each NFT owns a Soulbound Moloch Share of an LP Cooperative.</p>
             <ul>
               <li>Submit Proposals | Vote to Govern</li>

@@ -33,7 +33,7 @@ const FundingGoal = ({ raisedAmount, goalAmount, stretchAmount }: FundingGoalPro
       <div className={styles.goalRaised}>Ξ {raisedAmount.toFixed(2)}</div>
       {raisedAmount >= goalAmount ? (
         <>
-          <div className={styles.goalAmount}>[Bonus deposited as DAO owned VELO-USDC LP]</div>
+          <div className={styles.goalAmount}>[Bonus deposited as ???]</div>
         </>
       ) : (
         <div className={styles.goalAmount}>pledged of Ξ{goalAmount} goal</div>

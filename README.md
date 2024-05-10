@@ -21,6 +21,8 @@ Etherscan API || MolochShareAddress Holder Count.
 MolochParty.sol
   uint256 public endTime;
 
+Will need to convert to Hours Remaining until End Time.
+
 #### tier1.tsx [mintRemaining, costToMint]
 
 MolochParty.sol
@@ -45,26 +47,17 @@ MolochParty.sol
 
 ### Anatomy of SILO
 
-* The point here is to show the moloch treasury structure, as well as the 6551 Membership Structure.
+* Create a Diagram which shows the different components of a SILO.
+  * DAO Treasury [SAFE]
+    * Sudoswap LP
+  * Manager Vault [SAFE]
+  * LOOT [SAFE] [RQ]
+  * NFT
+  * 6551 Acct with Membership Shares [RQ]
 
 * We also want to provide links here to Activation and Admin.
-
-### Equity and RageQuit
-
-* The point here is to explain Equity | RageQuit rights, and limitations of only Rage Quitting Liquid Values.
-
+* Explain Equity | RageQuit rights, and limitations of only Rage Quitting Liquid Values.
 * We also want to cover Treasury Dissolution.
-
-### Treasury Balance Sheet Page [deBankBalances, nftBalances, freshBatch, commBank, equityContributions]
-
-* Use [deBank API](https://docs.cloud.debank.com/en/readme/api-pro-reference/user) for Token Balances | NFT Balances
-
-* Treasury Balance Sheet can also have prospective value -- meaning the allocation of funds raised from the campaign. Total Value in this case, is broken up into
-  * 3 ETH for Shizzy to paint 69
-  * 0.2 ETH per Commission that Shizzy is raising to do Custom Work
-  * Equity Contributions, and their intention for this campaign.
-
-* At a glance, this section should show what the balance sheet looks like as of now, and what it will look like when more people contribute for this campaign.
 
 ### SOCIALS
 
