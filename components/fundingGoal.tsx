@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from '../styles/Home.module.css'; // Ensure this path is correct.
+import styles from '../styles/Home.module.css';
 
 interface FundingGoalProps {
   raisedAmount: number;
   goalAmount: number;
-  stretchAmount: number; // Total goal including stretch.
+  stretchAmount: number;
 }
 
 const FundingGoal = ({ raisedAmount, goalAmount, stretchAmount }: FundingGoalProps) => {

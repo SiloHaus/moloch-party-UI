@@ -1,10 +1,6 @@
-# INFO
+# React Hooks
 
-## TODO
-
-### React Hooks
-
-#### fundingGoal.tsx [raisedAmount, goalAmount, stretchAmount]
+## fundingGoal.tsx [raisedAmount, goalAmount, stretchAmount]
 
 MolochParty.sol
 
@@ -12,18 +8,18 @@ MolochParty.sol
     uint256 public raisedAmount;
     uint256 public stretchAmount;
 
-#### memberCount.tsx [memberNumber]
+## memberCount.tsx [memberNumber]
 
 Etherscan API || MolochShareAddress Holder Count.
 
-#### daysLeft.tsx [daysLeft]
+## daysLeft.tsx [daysLeft]
 
 MolochParty.sol
   uint256 public endTime;
 
 Will need to convert to Hours Remaining until End Time.
 
-#### tier1.tsx [mintRemaining, costToMint]
+## tier1.tsx [mintRemaining, costToMint]
 
 MolochParty.sol
     uint256 public mintRemaining;
@@ -31,7 +27,7 @@ MolochParty.sol
 
 * function contributeTierI()
 
-#### tier2.tsx [mintRemaining, priceComm]
+## tier2.tsx [mintRemaining, priceComm]
 
 MolochParty.sol
     uint256 public mintRemaining;
@@ -39,13 +35,13 @@ MolochParty.sol
 
 * function contributeTierII()
 
-### DISCORD TICKET BOT
+## DISCORD TICKET BOT
 
 * The Commissions queue is a Discord Ticket Bot, with some basic prompts, and room for reference images to be put into the chat for that specific Issue.
 
 * The commissioner also needs to link their NFT -- specifically so that the TokenID can be associated with their image.
 
-### Anatomy of SILO
+## Anatomy of SILO
 
 * Create a Diagram which shows the different components of a SILO.
   * DAO Treasury [SAFE]
@@ -59,7 +55,7 @@ MolochParty.sol
 * Explain Equity | RageQuit rights, and limitations of only Rage Quitting Liquid Values.
 * We also want to cover Treasury Dissolution.
 
-### SOCIALS
+## SOCIALS
 
 * X
 * WARPCASTER
