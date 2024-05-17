@@ -1,4 +1,4 @@
-import { JsonRpcProvider, Contract, formatEther, formatUnits } from 'ethers';
+import { ethers } from 'ethers';
 
 const CONTRACT_ADDRESS = "0xD84D227b2965a011561FDD6C2782bA74d4551c51";
 const ABI = [
@@ -7,11 +7,26 @@ const ABI = [
 
 export const getEthersProvider = () => {
   const alchemyKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
-  const provider = new JsonRpcProvider(`https://opt-mainnet.g.alchemy.com/v2/${alchemyKey}`);
+  const provider = new ethers.providers.JsonRpcProvider(`https://opt-mainnet.g.alchemy.com/v2/${alchemyKey}`);
   return provider;
 };
 
-export const getContract = (provider: JsonRpcProvider) => {
-  const contract = new Contract(CONTRACT_ADDRESS, ABI, provider);
-  return contract;
+export const getWeb3Provider = () => {
+  if (typeof window !== 'undefined' && window.ethereum) {
+    const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
+    return web3Provider;
+  } else {
+    console.error('No Ethereum provider found');
+    return null;
+  }
+};
+
+export const getContract = (provider: ethers.providers.Provider | ethers.Signer) => {
+  return new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
+};
+
+export const getSigner = async (provider: ethers.providers.Web3Provider) => {
+  await provider.send("eth_requestAccounts", []); // Request account access if needed
+  const signer = provider.getSigner();
+  return new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
 };

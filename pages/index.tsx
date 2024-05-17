@@ -12,7 +12,7 @@ import RewardTiers from '../components/rewardTiers';
 import MainContent from '../components/mainContent';
 import VictoryBanner from '../components/victoryBanner';
 import { getEthersProvider, getContract } from '../utils/ethers';
-import { formatEther, formatUnits } from 'ethers';
+import { ethers } from 'ethers';
 
 const Home: NextPage = () => {
   const [raisedAmount, setRaisedAmount] = useState(0);
@@ -34,17 +34,17 @@ const Home: NextPage = () => {
         const costToMint = await contract.costToMint();
         const priceComm = await contract.priceComm();
 
-        setCostToMint(parseFloat(formatEther(costToMint)));
-        setPriceComm(parseFloat(formatEther(priceComm)));
+        setCostToMint(parseFloat(ethers.utils.formatEther(costToMint)));
+        setPriceComm(parseFloat(ethers.utils.formatEther(priceComm)));
 
         const goalAmount = await contract.goalAmount();
         const raisedAmount = await contract.raisedAmount();
         const stretchAmount = await contract.stretchAmount();
         const mintRemaining = await contract.mintRemaining();
 
-        setGoalAmount(parseFloat(formatEther(goalAmount)));
-        setRaisedAmount(parseFloat(formatEther(raisedAmount)));
-        setStretchAmount(parseFloat(formatEther(stretchAmount)));
+        setGoalAmount(parseFloat(ethers.utils.formatEther(goalAmount)));
+        setRaisedAmount(parseFloat(ethers.utils.formatEther(raisedAmount)));
+        setStretchAmount(parseFloat(ethers.utils.formatEther(stretchAmount)));
         setMintRemaining(parseInt(mintRemaining.toString(), 10)); // Assuming mintRemaining is not in wei
 
       } catch (error) {
