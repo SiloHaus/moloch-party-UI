@@ -16,8 +16,7 @@ import MainContent from '../components/mainContent';
 import VictoryBanner from '../components/victoryBanner';
 import { getEthersProvider, getContract } from '../utils/ethers';
 import { ethers } from 'ethers';
-
-// NEEDS memberNumber Code
+import { getTokenTotalSupply } from '../utils/ethers';
 
 // HOME
 const Home: NextPage = () => {
@@ -84,6 +83,23 @@ const Home: NextPage = () => {
       clearInterval(timer);
     };
   }, []);
+
+  // ETHERSCAN API
+  useEffect(() => {
+    const fetchTokenTotalSupply = async () => {
+      try {
+        const totalSupply = await getTokenTotalSupply();
+        console.log('Total supply:', totalSupply);
+        setMemberNumber(parseInt(totalSupply, 10));
+      } catch (error) {
+        console.error('Error fetching token total supply:', error);
+        setMemberNumber(0); // Set a default value or handle the error case
+      }
+    };
+
+    fetchTokenTotalSupply();
+  }, []);
+
 
   // CONTENT
   return (

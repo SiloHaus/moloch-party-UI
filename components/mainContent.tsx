@@ -10,17 +10,21 @@ interface MainContentProps {
   goalAmount: number;
 }
 
-// CONST | Possible to have a Hero Image | Starting and Finishing Image | Video Frame. 
-
+// CONST | Possible to have a Hero Image | Starting and Finishing Image | Video Frame.
 const MainContent: React.FC<MainContentProps> = ({ raisedAmount, goalAmount }) => {
   console.log("Raised Amount:", raisedAmount, "Goal Amount:", goalAmount); // Debugging line
-
   const imageSrc = raisedAmount < goalAmount ? "/hero.png" : "/hero.png";
   const imageAlt = raisedAmount < goalAmount ? "Starting image" : "Finishing image";
 
   return (
     <div className={styles.mainContent}>
-      <Image src={imageSrc} alt={imageAlt} width={1024} height={576} />
+      <Image
+        src={imageSrc}
+        alt={imageAlt}
+        width={1024}
+        height={576}
+        priority={true}
+      />
     </div>
   );
 };

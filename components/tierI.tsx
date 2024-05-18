@@ -58,8 +58,8 @@ const TierI: React.FC<TierIProps> = ({ mintRemaining, costToMint }) => {
             <div>MEMBERSHIP: {costToMint} Ξ</div>
             <div>[{mintRemaining} Remaining]</div>
           </div>
-          Undine Liquidity Cooperative
-          <p>Each NFT owns a Soulbound Moloch Share of an LP Cooperative on Base.</p>
+          Optimistic Landscapes
+          <p>Each Landscape owns a Moloch Share of an LP Cooperative on OP.</p>
           <ul>
             <li>Submit Proposals | Vote to Govern</li>
             <li>Burn your Share to Claim Equity.</li>

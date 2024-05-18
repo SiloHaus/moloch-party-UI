@@ -11,7 +11,7 @@ import { getDefaultConfig, RainbowKitProvider, midnightTheme } from '@rainbow-me
 
 const config = getDefaultConfig({
   appName: 'Moloch.Party',
-  projectId: 'MOLOCH_PARTY',
+  projectId: '976924f0c9972083692a10f5ba4f6aa7',
   chains: [
     optimism,
   ],
