@@ -1,13 +1,5 @@
 # React Hooks
 
-## fundingGoal.tsx [raisedAmount, goalAmount, stretchAmount]
-
-MolochParty.sol
-
-    uint256 public goalAmount; 
-    uint256 public raisedAmount;
-    uint256 public stretchAmount;
-
 ## memberCount.tsx [memberNumber]
 
 Etherscan API || MolochShareAddress Holder Count.
@@ -18,22 +10,6 @@ MolochParty.sol
   uint256 public endTime;
 
 Will need to convert to Hours Remaining until End Time.
-
-## tier1.tsx [mintRemaining, costToMint]
-
-MolochParty.sol
-    uint256 public mintRemaining;
-    uint256 public costToMint;
-
-* function contributeTierI()
-
-## tier2.tsx [mintRemaining, priceComm]
-
-MolochParty.sol
-    uint256 public mintRemaining;
-    uint256 public priceComm;
-
-* function contributeTierII()
 
 ## DISCORD TICKET BOT
 
@@ -70,6 +46,12 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+```touch .env```
+
+Then paste this into your .env file
+
+NEXT_PUBLIC_ALCHEMY_API_KEY=yourAPIKey42069
 
 ## REF
 

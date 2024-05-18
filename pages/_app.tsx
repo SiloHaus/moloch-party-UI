@@ -10,8 +10,8 @@ import { optimism, base, sepolia } from 'wagmi/chains';
 import { getDefaultConfig, RainbowKitProvider, midnightTheme } from '@rainbow-me/rainbowkit';
 
 const config = getDefaultConfig({
-  appName: 'RainbowKit App',
-  projectId: 'YOUR_PROJECT_ID', // Replace with your actual project ID
+  appName: 'Moloch.Party',
+  projectId: 'MOLOCH_PARTY', // Replace with your actual project ID
   chains: [
     optimism,
     base,
