@@ -1,13 +1,20 @@
+// tierI.tsx
+
+// IMPORTS
 import React from 'react';
 import Image from 'next/image';
 import { ethers } from 'ethers';
 import styles from '../styles/Home.module.css'; // Adjust the path to your CSS file as necessary
 import { getWeb3Provider, getSigner } from '../utils/ethers';
 
+// NEEDS a link to the Moloch RDF Activation Page.
+
 interface TierIProps {
   mintRemaining: number;
   costToMint: number;
 }
+
+// CONST | TierI has the contributeTierI()
 
 const TierI: React.FC<TierIProps> = ({ mintRemaining, costToMint }) => {
   const handleMint = async () => {

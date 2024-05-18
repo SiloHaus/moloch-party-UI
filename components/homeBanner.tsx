@@ -1,13 +1,19 @@
+// homeBanner.tsx [AESTHETIC UI]
+
+// IMPORTS
 import React from 'react';
-import styles from '../styles/Home.module.css'; // Ensure this is the correct path to your CSS module
+import styles from '../styles/Home.module.css';
 
 interface HomeBannerProps {
   raisedAmount: number;
   goalAmount: number;
 }
 
+// CONST | Bottom of Home Page Funding Banner.
+// This is not really necessary, but you might be able to do an "almost there" type UI.
+
 const HomeBanner = ({ raisedAmount, goalAmount }: HomeBannerProps) => {
-  const sections = 3; // Total number of sections
+  const sections = 3; // These sections fill up as Goal is reached.
 
   return (
     <div className={styles.banner}>
@@ -17,7 +23,6 @@ const HomeBanner = ({ raisedAmount, goalAmount }: HomeBannerProps) => {
         const isMilestoneReached = raisedAmount >= milestone;
         
         // Calculate fillPercentage for the current section
-        // This calculates what fraction of this section's goal has been raised
         let fillPercentage = Math.max(0, Math.min(100, (raisedAmount - (index * goalAmount / sections)) / (goalAmount / sections) * 100));
         
         // Ensure that only the portion up to the raisedAmount is filled

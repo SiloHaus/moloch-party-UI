@@ -1,4 +1,6 @@
 // RewardTiers.tsx
+
+// IMPORTS
 import React from 'react';
 import TierI from './tierI'; // Adjust path as necessary
 import TierII from './tierII'; // Adjust path as necessary
@@ -9,6 +11,8 @@ interface RewardTiersProps {
   costToMint: number;
   priceComm: number;
 }
+
+// CONST | A larger frame which holds TierI and TierII.
 
 const RewardTiers: React.FC<RewardTiersProps> = ({ mintRemaining, costToMint, priceComm }) => {
   return (

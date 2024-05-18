@@ -1,9 +1,14 @@
+// hoursLeft.tsx
+
+// IMPORTS
 import React from 'react';
-import styles from '../styles/Home.module.css'; // Adjust the path to your CSS module as necessary
+import styles from '../styles/Home.module.css';
 
 interface HoursLeftProps {
   hoursLeft: number;
 }
+
+// CONST | Calculates hours remaining in campaign.
 
 const HoursLeft: React.FC<HoursLeftProps> = ({ hoursLeft }) => {
   return (

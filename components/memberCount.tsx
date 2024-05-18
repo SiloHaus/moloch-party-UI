@@ -1,9 +1,14 @@
+// memberCount.tsx
+
+// IMPORTS
 import React from 'react';
 import styles from '../styles/Home.module.css'; // Adjust the path to your CSS file as needed
 
 interface MemberCountProps {
   memberNumber: number;
 }
+
+// CONST | LINK to Moloch DAO UI || Also displays Members, which are fetched from Etherscan API.
 
 const MemberCount: React.FC<MemberCountProps> = ({ memberNumber }) => {
   return (

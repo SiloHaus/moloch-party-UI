@@ -1,5 +1,7 @@
+// mainContent.tsx
+
+// IMPORTS
 import React from 'react';
-// Import the Image component from Next.js
 import Image from 'next/image';
 import styles from '../styles/Home.module.css'; // Adjust the import path to your CSS module file
 
@@ -7,6 +9,8 @@ interface MainContentProps {
   raisedAmount: number;
   goalAmount: number;
 }
+
+// CONST | Possible to have a Hero Image | Starting and Finishing Image | Video Frame. 
 
 const MainContent: React.FC<MainContentProps> = ({ raisedAmount, goalAmount }) => {
   console.log("Raised Amount:", raisedAmount, "Goal Amount:", goalAmount); // Debugging line

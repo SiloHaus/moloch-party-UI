@@ -1,3 +1,6 @@
+// fundingGoal.tsx
+
+// IMPORTS
 import React from 'react';
 import styles from '../styles/Home.module.css';
 
@@ -6,6 +9,8 @@ interface FundingGoalProps {
   goalAmount: number;
   stretchAmount: number;
 }
+
+// CONST | Funding Goal Bar
 
 const FundingGoal = ({ raisedAmount, goalAmount, stretchAmount }: FundingGoalProps) => {
   const fundingPercentage = Math.min(100, (raisedAmount / goalAmount) * 100);
@@ -33,7 +38,7 @@ const FundingGoal = ({ raisedAmount, goalAmount, stretchAmount }: FundingGoalPro
       <div className={styles.goalRaised}>Ξ {raisedAmount.toFixed(2)}</div>
       {raisedAmount >= goalAmount ? (
         <>
-          <div className={styles.goalAmount}>[Bonus deposited as ???]</div>
+          <div className={styles.goalAmount}>[Goal Raised!]</div>
         </>
       ) : (
         <div className={styles.goalAmount}>pledged of Ξ{goalAmount} goal</div>

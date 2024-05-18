@@ -6,11 +6,6 @@ Etherscan API || MolochShareAddress Holder Count.
 
 ## daysLeft.tsx [daysLeft]
 
-MolochParty.sol
-  uint256 public endTime;
-
-Will need to convert to Hours Remaining until End Time.
-
 ## DISCORD TICKET BOT
 
 * The Commissions queue is a Discord Ticket Bot, with some basic prompts, and room for reference images to be put into the chat for that specific Issue.

@@ -1,3 +1,6 @@
+// index.tsx
+
+// IMPORTS
 import React, { useState, useEffect } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
@@ -14,7 +17,12 @@ import VictoryBanner from '../components/victoryBanner';
 import { getEthersProvider, getContract } from '../utils/ethers';
 import { ethers } from 'ethers';
 
+// NEEDS memberNumber Code
+
+// HOME
 const Home: NextPage = () => {
+  
+// VARS
   const [raisedAmount, setRaisedAmount] = useState(0);
   const [goalAmount, setGoalAmount] = useState(0);
   const [stretchAmount, setStretchAmount] = useState(0);
@@ -25,6 +33,7 @@ const Home: NextPage = () => {
   const [priceComm, setPriceComm] = useState(0);
   const isVictoryBannerVisible = raisedAmount >= goalAmount;
 
+// READ | FETCH VARS
   useEffect(() => {
     const fetchContractData = async () => {
       try {
@@ -45,16 +54,38 @@ const Home: NextPage = () => {
         setGoalAmount(parseFloat(ethers.utils.formatEther(goalAmount)));
         setRaisedAmount(parseFloat(ethers.utils.formatEther(raisedAmount)));
         setStretchAmount(parseFloat(ethers.utils.formatEther(stretchAmount)));
-        setMintRemaining(parseInt(mintRemaining.toString(), 10)); // Assuming mintRemaining is not in wei
+        setMintRemaining(parseInt(mintRemaining.toString(), 10));
 
+        // HOURS LEFT | CAMPAIGN TIMER | UPDATED EACH MINUTE
+        const startTime = await contract.startTime();
+        const endTime = await contract.endTime();
+
+        const currentTime = Math.floor(Date.now() / 1000);
+        const remainingSeconds = endTime.toNumber() - currentTime;
+
+        if (remainingSeconds > 0) {
+          const remainingHours = Math.floor(remainingSeconds / 3600);
+          setHoursLeft(remainingHours);
+        } else {
+          setHoursLeft(0);
+        }
       } catch (error) {
         console.error('Error fetching contract data:', error);
       }
     };
 
     fetchContractData();
+
+    const timer = setInterval(() => {
+      fetchContractData();
+    }, 60000);
+
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
+  // CONTENT
   return (
     <div className={styles.container}>
       <Head>
@@ -67,10 +98,12 @@ const Home: NextPage = () => {
         <div className={styles.connectButton}><ConnectButton /></div>
       </div>
 
+{/* TITLE */}
       <div className={styles.Title}>
         <div className={styles.cardSubtitle}>/OPTIMISTIC_LANDSCAPES</div>
       </div>
 
+{/* KICKSTARTER UI CAMPAIGN PAGE */}
       <div className={styles.mainWrapper}>
         <div className={styles.centeredContent}>
           <main className={styles.main}>
@@ -92,7 +125,7 @@ const Home: NextPage = () => {
       <HomeBanner raisedAmount={raisedAmount} goalAmount={goalAmount} />
       <VictoryBanner isVisible={isVictoryBannerVisible} />
 
-      {/* Reward Tiers Section */}
+      {/* REWARD TIERS */}
       <div className={styles.newPageA}>
         <div id="targetAnchor"></div>
       </div>
@@ -102,7 +135,7 @@ const Home: NextPage = () => {
 
       <RewardTiers mintRemaining={mintRemaining} costToMint={costToMint} priceComm={priceComm} />
 
-      {/* BAAL | 6551 Structures */}
+      {/* INFO: BAAL | 6551 Structures */}
       <div className={styles.newPageA}>
         <div id="targetAnchorB"></div>
       </div>

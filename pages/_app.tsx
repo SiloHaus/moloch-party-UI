@@ -1,9 +1,9 @@
 // _app.tsx
 
+// IMPORTS
 import '../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
-
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
 import { optimism, base, sepolia } from 'wagmi/chains';
@@ -11,18 +11,17 @@ import { getDefaultConfig, RainbowKitProvider, midnightTheme } from '@rainbow-me
 
 const config = getDefaultConfig({
   appName: 'Moloch.Party',
-  projectId: 'MOLOCH_PARTY', // Replace with your actual project ID
+  projectId: 'MOLOCH_PARTY',
   chains: [
     optimism,
-    base,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [sepolia] : []),
   ],
   ssr: true,
 });
 
+// TANSTACK
 const client = new QueryClient();
 
-// Update custom theme specifically for the ConnectButton
+// RAINBOWKIT | Connect Theme
 const customTheme = midnightTheme({
 });
 
