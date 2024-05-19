@@ -1,18 +1,4 @@
-# React Hooks
-
-## memberCount.tsx [memberNumber]
-
-Etherscan API || MolochShareAddress Holder Count.
-
-## daysLeft.tsx [daysLeft]
-
-## DISCORD TICKET BOT
-
-* The Commissions queue is a Discord Ticket Bot, with some basic prompts, and room for reference images to be put into the chat for that specific Issue.
-
-* The commissioner also needs to link their NFT -- specifically so that the TokenID can be associated with their image.
-
-## Anatomy of SILO
+# Anatomy of SILO
 
 * Create a Diagram which shows the different components of a SILO.
   * DAO Treasury [SAFE]

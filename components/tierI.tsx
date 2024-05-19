@@ -44,7 +44,7 @@ const TierI: React.FC<TierIProps> = ({ mintRemaining, costToMint }) => {
       <div className={styles.tierContainer}>
         <div className={styles.tierRightButtonWrapper}>
           <div className={styles.tierRightButton} onClick={handleMint}>
-            /tap\_to\_mint()
+            /tap_to_mint()
           </div>
           <div className={styles.tierRightButton} onClick={() => window.open(activationLink, '_blank')}>
             Activate

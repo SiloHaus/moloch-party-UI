@@ -15,7 +15,7 @@ interface TierIIProps {
 // CONST | Has the contributeTierII().
 const TierII: React.FC<TierIIProps> = ({ mintRemaining, priceComm }) => {
   const [activationLink, setActivationLink] = useState('https://moloch.party');
-  const [discordLink, setDiscordLink] = useState('https://discord.fun');
+  const [discordLink, setDiscordLink] = useState('https://discord.gg/tVQTzaps29');
 
   const handleMintComm = async () => {
     try {
@@ -45,7 +45,7 @@ const TierII: React.FC<TierIIProps> = ({ mintRemaining, priceComm }) => {
       <div className={styles.tierContainer}>
         <div className={styles.tierRightButtonWrapper}>
           <div className={styles.tierRightButton} onClick={handleMintComm}>
-            /tap\_to\_mintComm()
+            /tap_to_mintComm()
           </div>
           <div className={styles.tierRightButton} onClick={() => window.open(activationLink, '_blank')}>
             Activation
