@@ -44,7 +44,7 @@ export const getTokenTotalSupply = async () => {
   const molochToken = MOLOCH_SHARE_TOKEN_ADDRESS;
   const etherscanApiKey = process.env.ETHERSCAN_API_KEY;
   const response = await fetch(
-    `https://api-optimistic.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${molochToken}&apikey=AF13HSINCV1R86QHX18GA7N5FG6X589GFQ`
+    `https://api-optimistic.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${molochToken}&apikey=${etherscanApiKey}`
   );
   const data = await response.json();
   console.log('Etherscan API response:', data);
